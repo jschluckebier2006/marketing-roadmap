@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready to Grow? - KO Marketing Roadmap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #020817;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: #020817;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.7);
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+            padding: 0.3rem 0.5rem;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        nav a.active {
+            color: #4461F2;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4461F2 0%, #020817 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInDown 0.8s ease forwards;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+        .section:nth-child(5) { animation-delay: 1s; }
+
+        h2 {
+            font-size: 2rem;
+            color: #4461F2;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #020817;
+            margin: 1.5rem 0 0.75rem 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: #4461F2;
+            font-weight: 600;
+        }
+
+        /* Two Column Path Section */
+        .paths {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .path {
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid #e0e4ff;
+        }
+
+        .path.diy {
+            background: #f8f9ff;
+        }
+
+        .path.done-for-you {
+            background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+            border-color: #4461F2;
+        }
+
+        .path h4 {
+            font-size: 1.4rem;
+            color: #4461F2;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .path ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .path li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .path li:before {
+            content: "✓";
+            color: #4461F2;
+            font-weight: 700;
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            border: 2px solid #e0e4ff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: #4461F2;
+            box-shadow: 0 8px 24px rgba(68, 97, 242, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .service-card h4 {
+            font-size: 1.1rem;
+            color: #4461F2;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Why Us Box */
+        .why-us {
+            background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+            border: 2px solid #e0e4ff;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .why-us ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .why-us li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .why-us li:last-child {
+            margin-bottom: 0;
+        }
+
+        .why-us li:before {
+            content: "→";
+            color: #4461F2;
+            font-weight: 700;
+            margin-right: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Software Highlight */
+        .software-highlight {
+            background: linear-gradient(135deg, #4461F2 0%, #020817 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .software-highlight h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .software-highlight p {
+            color: rgba(255,255,255,0.95);
+        }
+
+        .software-highlight a {
+            display: inline-block;
+            background: white;
+            color: #4461F2;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .software-highlight a:hover {
+            background: #f8f9ff;
+            transform: translateY(-2px);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: #f8f9ff;
+            border: 2px solid #e0e4ff;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #020817;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid #e0e4ff;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4461F2;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #4461F2;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #020817;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(68, 97, 242, 0.3);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-method {
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            border: 2px solid #e0e4ff;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .contact-method h4 {
+            color: #4461F2;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-method a {
+            color: #4461F2;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            word-break: break-all;
+        }
+
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+
+        /* Final Message */
+        .final-message {
+            background: linear-gradient(135deg, #4461F2 0%, #020817 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .final-message h3 {
+            color: white;
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .final-message p {
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                gap: 1rem;
+                padding: 1rem;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .paths {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .why-us li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gbp.html">Google Business</a>
+        <a href="website.html">Website</a>
+        <a href="seo.html">SEO</a>
+        <a href="google-ads.html">Google Ads</a>
+        <a href="social-media.html">Social Media</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="automation.html">Automation</a>
+        <a href="niche.html">Niche</a>
+        <a href="ai.html">AI</a>
+        <a href="hire-us.html" class="active">Hire Us</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Ready to Grow?</h1>
+        <p>You've Got the Roadmap. Now Choose Your Path.</p>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Two Paths Forward</h2>
+            <p>Everything you've learned on this roadmap can be implemented by you, or we can handle it for you. Here's the choice:</p>
+
+            <div class="paths">
+                <div class="path diy">
+                    <h4>DIY Path</h4>
+                    <p>You implement the strategies yourself using AI tools and the tactics from this roadmap.</p>
+                    <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gbp.html">Google Business</a></li>
+                <li><a href="website.html">Website</a></li>
+                <li><a href="seo.html">SEO</a></li>
+                <li><a href="google-ads.html">Google Ads</a></li>
+                <li><a href="social-media.html">Social Media</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="automation.html">Automation</a></li>
+                <li><a href="niche.html">Niche</a></li>
+                <li><a href="ai.html">AI</a></li>
+                <li><a href="hire-us.html" style="color:#4461F2">Hire Us</a></li>
+            </ul>
+                </div>
+
+                <div class="path done-for-you">
+                    <h4>Done-For-You Path</h4>
+                    <p>Let KO Marketing handle the strategy, content, and optimization. You focus on running your business.</p>
+                    <ul>
+                        <li>Expert strategy & execution</li>
+                        <li>Faster results (30-60 days)</li>
+                        <li>Ongoing optimization & support</li>
+                        <li>Access to our proprietary tools</li>
+                        <li>You stay focused on operations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>What KO Marketing Does For Party Rental Businesses</h2>
+            <p>We specialize in helping bounce house and party rental companies scale through digital marketing. Here's what's included:</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>🔍 Google Business Profile Optimization</h4>
+                    <p>Complete optimization of your GBP listing including photos, services, posts, and schema markup.</p>
+                </div>
+                <div class="service-card">
+                    <h4>📄 City Landing Pages & SEO</h4>
+                    <p>We build niche-specific and city-specific landing pages optimized for your target keywords.</p>
+                </div>
+                <div class="service-card">
+                    <h4>🎯 Google Ads Management</h4>
+                    <p>Campaign setup, keyword research, ad copy testing, and continuous optimization for ROI.</p>
+                </div>
+                <div class="service-card">
+                    <h4>📱 Social Media Management</h4>
+                    <p>Powered by KO Social Software - automated posting to Facebook, Instagram, and Google Business.</p>
+                </div>
+                <div class="service-card">
+                    <h4>📊 Conversion Tracking Setup</h4>
+                    <p>We implement tracking pixels, goal setup, and analytics so you know what's working.</p>
+                </div>
+                <div class="service-card">
+                    <h4>🚀 Website Audits & Improvements</h4>
+                    <p>Complete audit of your website with specific recommendations for conversion rate optimization.</p>
+                </div>
+            </div>
+
+            <div class="why-us">
+                <h3>Why Work With KO Marketing?</h3>
+                <ul>
+                    <li>We ONLY work with bounce house and party rental businesses - we know your industry inside and out</li>
+                    <li>We've helped 50+ party rental companies grow their bookings by 30-300%</li>
+                    <li>We live and breathe party rentals - your success is our success</li>
+                    <li>You get a dedicated account manager who understands your market</li>
+                    <li>We use AI and automation to deliver results faster and cheaper than traditional agencies</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="software-highlight">
+                <h3>KO Social Software - Included in Our Services</h3>
+                <p>Save hours every week with automated social media posting. We provide pre-built content templates specifically designed for party rental businesses. Auto-post to Facebook, Instagram, and Google Business Profile.</p>
+                <p><strong>Want to use it independently?</strong> Visit kosocialsoftware.com to sign up and start automating your social media today.</p>
+                <a href="https://kosocialsoftware.com" target="_blank">Visit KO Social Software →</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Contact Us</h2>
+            <p>Tell us about your business and what you need help with. We'll respond within 24 hours with a personalized plan.</p>
+
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="business">Business Name *</label>
+                    <input type="text" id="business" name="business" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">Your City/Market *</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="need">What do you need help with? *</label>
+                    <select id="need" name="need" required>
+                        <option value="">-- Select an option --</option>
+                        <option value="SEO">SEO & Local Ranking</option>
+                        <option value="Google Ads">Google Ads</option>
+                        <option value="Social Media">Social Media Management</option>
+                        <option value="Website">Website Audit & Redesign</option>
+                        <option value="Niche Services">Adding Niche Services</option>
+                        <option value="Everything">Everything (Full Service)</option>
+                        <option value="Other">Something Else</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tell us more about your business (optional)</label>
+                    <textarea id="message" name="message" placeholder="How long have you been in business? What services do you offer? What's your biggest marketing challenge?"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send My Information</button>
+            </form>
+
+            <div class="contact-info">
+                <div class="contact-method">
+                    <h4>Email</h4>
+                    <a href="mailto:hello@kosocialsoftware.com">hello@kosocialsoftware.com</a>
+                </div>
+                <div class="contact-method">
+                    <h4>Text or Call</h4>
+                    <p style="margin: 0; color: #020817;">Available during business hours</p>
+                </div>
+                <div class="contact-method">
+                    <h4>Website</h4>
+                    <a href="https://kosocialsoftware.com" target="_blank">kosocialsoftware.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="final-message">
+                <h3>Whether You Go DIY or Done-For-You, The Important Thing Is That You START</h3>
+                <p><strong>Every day you wait is another day your competitor is growing.</strong></p>
+                <p>You've got the roadmap. You know exactly what works. Now it's time to take action.</p>
+                <p style="margin-top: 1.5rem; font-style: italic;">Remember: This information is so good you're not going to want your competitor to know this stuff!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set active nav based on current page
+        const currentPage = window.location.pathname.split('/').pop() || 'niche.html';
+        document.querySelectorAll('nav a').forEach(link => {
+            if (link.href.includes(currentPage)) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const business = document.getElementById('business').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+            const need = document.getElementById('need').value;
+            const message = document.getElementById('message').value;
+
+            // Create mailto link with all information
+            const mailtoLink = `mailto:hello@kosocialsoftware.com?subject=New Lead: ${encodeURIComponent(business)}&body=${encodeURIComponent(
+                `Name: ${name}\nBusiness: ${business}\nEmail: ${email}\nPhone: ${phone}\nCity: ${city}\nNeed: ${need}\n\nMessage:\n${message}`
+            )}`;
+
+            // Open default email client
+            window.location.href = mailtoLink;
+
+            // Show success message
+            const form = event.target;
+            const successMsg = document.createElement('div');
+            successMsg.style.cssText = 'background: #f0f4ff; border: 2px solid #4461F2; color: #020817; padding: 1rem; border-radius: 8px; margin-top: 1rem; text-align: center; font-weight: 500;';
+            successMsg.innerHTML = 'Thanks! Please complete the email that opened. We\'ll follow up within 24 hours.';
+            form.appendChild(successMsg);
+
+            // Reset form
+            setTimeout(() => {
+                form.reset();
+                successMsg.remove();
+            }, 3000);
+        }
+
+        // Smooth nav transitions
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

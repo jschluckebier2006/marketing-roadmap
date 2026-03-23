@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ads for Bounce House Businesses | KO Marketing Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4461F2;
+            --dark: #020817;
+            --light-gray: #F5F7FA;
+            --border: #E0E5F0;
+            --text: #1A202C;
+            --text-light: #718096;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #FFFFFF;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a:first-child {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.3rem;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #2D3A8F 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        /* Why Google Ads Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(68, 97, 242, 0.1);
+        }
+
+        .benefit-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        /* Match Types Section */
+        .match-type {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            transition: all 0.3s;
+        }
+
+        .match-type:hover {
+            box-shadow: 0 12px 30px rgba(68, 97, 242, 0.12);
+            border-color: var(--primary);
+        }
+
+        .match-type-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .match-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .broad-badge {
+            background: #FFE5E5;
+            color: #C41E3A;
+        }
+
+        .phrase-badge {
+            background: #FFF4E5;
+            color: #E67E22;
+        }
+
+        .exact-badge {
+            background: #E5F3FF;
+            color: #0066CC;
+        }
+
+        .match-keyword {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .match-examples {
+            background: #F0F7FF;
+            border-left: 3px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+
+        .match-examples strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .match-examples ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .match-examples li {
+            padding: 0.4rem 0;
+            color: var(--text);
+        }
+
+        .match-examples li:before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        .problem-box {
+            background: #FFE5E5;
+            border: 2px solid #C41E3A;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .problem-box strong {
+            color: #C41E3A;
+        }
+
+        .when-to-use {
+            background: #E5F3FF;
+            border: 2px solid #0066CC;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .when-to-use strong {
+            color: #0066CC;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .comparison-table th {
+            background: var(--dark);
+            color: white;
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 1.2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tbody tr:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        .control-high { color: #22863A; font-weight: 600; }
+        .control-medium { color: #E67E22; font-weight: 600; }
+        .control-low { color: #C41E3A; font-weight: 600; }
+
+        /* Campaign Structure */
+        .campaign-card {
+            background: var(--light-gray);
+            border-left: 4px solid var(--primary);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .campaign-card h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        /* Negative Keywords */
+        .negative-keyword-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .negative-keyword {
+            background: #FFE5E5;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-left: 3px solid #C41E3A;
+        }
+
+        .negative-keyword strong {
+            display: block;
+            color: #C41E3A;
+            margin-bottom: 0.3rem;
+        }
+
+        .negative-keyword p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Ad Extensions */
+        .extension-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .extension-item {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .extension-item strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* Landing Page Tips */
+        .do-dont {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .do-box {
+            background: #E5F5E5;
+            border-left: 4px solid #22863A;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .dont-box {
+            background: #FFE5E5;
+            border-left: 4px solid #C41E3A;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .do-box h4, .dont-box h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .do-box h4 { color: #22863A; }
+        .dont-box h4 { color: #C41E3A; }
+
+        .do-box ul, .dont-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .do-box li, .dont-box li {
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .do-box li:before {
+            content: "✓ ";
+            font-weight: 700;
+            color: #22863A;
+            margin-right: 0.5rem;
+        }
+
+        .dont-box li:before {
+            content: "✗ ";
+            font-weight: 700;
+            color: #C41E3A;
+            margin-right: 0.5rem;
+        }
+
+        /* Conversion Tracking */
+        .tracking-metric {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .metric-label {
+            font-weight: 600;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Budget Section */
+        .budget-box {
+            background: linear-gradient(135deg, var(--primary) 0%, #2D3A8F 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .budget-box h4 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .budget-box li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, #2D3A8F 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .final-cta h3 {
+            color: white;
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        .final-cta p {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: rgba(255,255,255,0.8);
+            margin: 0;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .do-dont {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 2.5rem 1rem;
+            }
+
+            .match-type {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html">KO Marketing</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gbp.html">Google Business</a></li>
+                <li><a href="website.html">Website</a></li>
+                <li><a href="seo.html">SEO</a></li>
+                <li><a href="google-ads.html" style="color:#4461F2">Google Ads</a></li>
+                <li><a href="social-media.html">Social Media</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="automation.html">Automation</a></li>
+                <li><a href="niche.html">Niche</a></li>
+                <li><a href="ai.html">AI</a></li>
+                <li><a href="hire-us.html">Hire Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <h1>Google Ads for Bounce House & Party Rental Businesses</h1>
+            <p>Turn search intent into bookings. The complete guide to dominating local Google search results.</p>
+        </div>
+    </div>
+
+    <!-- Section 1: Why Google Ads -->
+    <section id="why-google-ads">
+        <div class="container">
+            <h2>Why Google Ads for Bounce House Businesses</h2>
+            <p>Most bounce house business owners are invisible to the customers actively searching for them right now. Google Ads changes that in one day.</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card animate-on-scroll">
+                    <h3>💰 High Purchase Intent</h3>
+                    <p>When someone searches "bounce house rental near me," they're ready to book <strong>today</strong>. Not researching, not browsing—actively looking to spend money. These are the hottest leads you can get.</p>
+                </div>
+
+                <div class="benefit-card animate-on-scroll">
+                    <h3>🎯 Active vs. Interruption</h3>
+                    <p>Unlike social media where you interrupt people scrolling, Google Ads finds people actively looking for what you sell. You're not interrupting—you're answering a direct question.</p>
+                </div>
+
+                <div class="benefit-card animate-on-scroll">
+                    <h3>📍 Above Everything Else</h3>
+                    <p>Google Ads appear at the very top of search results, above organic listings, Maps, and everything else. Position zero. When someone searches for bounce house rentals, your ad is literally the first thing they see.</p>
+                </div>
+
+                <div class="benefit-card animate-on-scroll">
+                    <h3>💹 Know Your ROI</h3>
+                    <p>When set up correctly, you know exactly how much each booking costs you in ad spend. If a $300 rental costs $30 in ads, that's a 10x return. Complete transparency on every dollar.</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem; font-style: italic; color: var(--text-light);">But here's the catch: <strong>Set up wrong, Google Ads is a money pit.</strong> Set up right, it's your biggest revenue driver. The difference comes down to understanding match types, campaign structure, and landing pages.</p>
+        </div>
+    </section>
+
+    <!-- Section 2: Match Types -->
+    <section id="match-types">
+        <div class="container">
+            <h2>Match Types: The Most Important Thing to Understand</h2>
+            <p style="font-size: 1.2rem; color: var(--primary); font-weight: 600;">This is where most bounce house business owners waste the most money. Get this wrong, and you're paying for irrelevant clicks. Get it right, and every click is a potential customer.</p>
+
+            <!-- Broad Match -->
+            <div class="match-type animate-on-scroll">
+                <div class="match-type-header">
+                    <span class="match-badge broad-badge">BROAD MATCH</span>
+                </div>
+                <h3 style="margin-top: 0;">Broad Match: The Wild West</h3>
+
+                <p><strong>Your keyword:</strong></p>
+                <div class="match-keyword">bounce house rental</div>
+
+                <p><strong>Google will show your ad for searches like:</strong></p>
+                <div class="match-examples">
+                    <strong>Examples:</strong>
+                    <ul>
+                        <li>kids party ideas</li>
+                        <li>inflatable pool toys</li>
+                        <li>trampoline park near me</li>
+                        <li>birthday party entertainment</li>
+                        <li>party games</li>
+                        <li>inflatable tent</li>
+                        <li>water slide rentals</li>
+                    </ul>
+                </div>
+
+                <div class="problem-box">
+                    <strong>⚠️ The Problem:</strong> You pay for clicks from people who aren't looking for what you sell. Someone searching "kids party ideas" might be looking for games or activities—not bounce house rentals. You're burning budget on irrelevant traffic.
+                </div>
+
+                <div class="when-to-use">
+                    <strong>When to Use:</strong> Almost never for small businesses. Broad match is for companies with massive budgets who can afford waste. As a bounce house owner, you need every dollar to count.
+                </div>
+            </div>
+
+            <!-- Phrase Match -->
+            <div class="match-type animate-on-scroll">
+                <div class="match-type-header">
+                    <span class="match-badge phrase-badge">PHRASE MATCH</span>
+                </div>
+                <h3 style="margin-top: 0;">Phrase Match: The Sweet Spot</h3>
+
+                <p><strong>Your keyword:</strong></p>
+                <div class="match-keyword">"bounce house rental"</div>
+
+                <p><strong>Google will show your ad for searches like:</strong></p>
+                <div class="match-examples">
+                    <strong>Examples (phrase must appear in this order):</strong>
+                    <ul>
+                        <li>bounce house rental near me</li>
+                        <li>cheap bounce house rental</li>
+                        <li>bounce house rental for birthday party</li>
+                        <li>bounce house rental [your city]</li>
+                        <li>best bounce house rental</li>
+                        <li>affordable bounce house rental</li>
+                    </ul>
+                </div>
+
+                <div class="when-to-use">
+                    <strong>✓ The Benefit:</strong> Searches must contain your phrase in the exact order, but can have words before or after. You get good reach while maintaining control. These are people actively searching for bounce house rentals with modifiers (location, price, intent).
+                </div>
+
+                <div class="when-to-use">
+                    <strong>When to Use:</strong> <strong>This is your main workhorse.</strong> Use phrase match for your core services and high-volume keywords. It balances reach with relevance perfectly for party rental businesses.
+                </div>
+            </div>
+
+            <!-- Exact Match -->
+            <div class="match-type animate-on-scroll">
+                <div class="match-type-header">
+                    <span class="match-badge exact-badge">EXACT MATCH</span>
+                </div>
+                <h3 style="margin-top: 0;">Exact Match: Maximum Control</h3>
+
+                <p><strong>Your keyword:</strong></p>
+                <div class="match-keyword">[bounce house rental]</div>
+
+                <p><strong>Google will show your ad for searches like:</strong></p>
+                <div class="match-examples">
+                    <strong>Examples (very close variations only):</strong>
+                    <ul>
+                        <li>bounce house rental</li>
+                        <li>bounce house rentals (plural)</li>
+                        <li>rent a bounce house</li>
+                    </ul>
+                </div>
+
+                <div class="when-to-use">
+                    <strong>✓ The Benefit:</strong> Tightest control of your spend. Only shows for very close variations of your exact keyword. No waste, but also less reach. Every click is highly likely to convert.
+                </div>
+
+                <div class="when-to-use">
+                    <strong>When to Use:</strong> Best for your most valuable keywords where you're seeing great conversion rates. If "bounce house rental near me" converts at 15%, make it exact match to protect that high-performing keyword. Also use for location-specific exact matches like "[bounce house rental Denver]".
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div style="overflow-x: auto; margin-top: 3rem;">
+                <table class="comparison-table animate-on-scroll">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Broad Match</th>
+                            <th>Phrase Match</th>
+                            <th>Exact Match</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Control Level</strong></td>
+                            <td><span class="control-low">Low</span></td>
+                            <td><span class="control-medium">Medium</span></td>
+                            <td><span class="control-high">High</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reach/Volume</strong></td>
+                            <td><span class="control-high">Highest</span></td>
+                            <td><span class="control-medium">Medium</span></td>
+                            <td><span class="control-low">Lowest</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cost per Click</strong></td>
+                            <td><span class="control-low">Usually low</span></td>
+                            <td><span class="control-medium">Medium</span></td>
+                            <td><span class="control-high">Usually higher</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Conversion Rate</strong></td>
+                            <td><span class="control-low">Low</span></td>
+                            <td><span class="control-medium">Medium-High</span></td>
+                            <td><span class="control-high">Highest</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Best For</strong></td>
+                            <td>Large companies with big budgets</td>
+                            <td>Core services, main keywords</td>
+                            <td>High-performing, valuable keywords</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Risk Level</strong></td>
+                            <td><span class="control-low">Very High</span></td>
+                            <td><span class="control-medium">Medium</span></td>
+                            <td><span class="control-high">Low</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p style="margin-top: 2rem; padding: 1.5rem; background: #F0F7FF; border-radius: 8px; border-left: 4px solid var(--primary);">
+                <strong>Pro Strategy:</strong> Start with phrase match for your main keywords. As you learn which keywords convert well, move those to exact match. Use your Search Terms report (see Section 5) to find new phrase match keywords. Never use broad match unless you have a huge budget you don't mind losing.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 3: Campaign Structure -->
+    <section id="campaign-structure">
+        <div class="container">
+            <h2>Campaign Structure for Party Rental Businesses</h2>
+            <p>Campaigns aren't just organization—they're how you track performance and control budget. Here's the structure that works for bounce house businesses:</p>
+
+            <div class="campaign-card animate-on-scroll">
+                <h4>Campaign 1: Core Services</h4>
+                <p><strong>Keywords:</strong> bounce house rental, water slide rental, inflatable rental, combo bounce house, jumper rental</p>
+                <p><strong>Budget:</strong> 40-50% of total</p>
+                <p><strong>Why:</strong> These are your bread and butter. This campaign captures the most search volume. Keywords are more general geographically.</p>
+            </div>
+
+            <div class="campaign-card animate-on-scroll">
+                <h4>Campaign 2: Event Types</h4>
+                <p><strong>Keywords:</strong> birthday party rental, school event bounce house, church carnival rentals, corporate event rentals, wedding entertainment</p>
+                <p><strong>Budget:</strong> 30-40% of total</p>
+                <p><strong>Why:</strong> People searching by event type often have specific needs and larger budgets. These convert at higher rates. Separate campaign shows you which events drive the most revenue.</p>
+            </div>
+
+            <div class="campaign-card animate-on-scroll">
+                <h4>Campaign 3: City-Specific</h4>
+                <p><strong>Keywords:</strong> bounce house rental Denver, party rentals Austin, bounce house rental [your city], inflatable rentals [your city]</p>
+                <p><strong>Budget:</strong> 20-30% of total</p>
+                <p><strong>Why:</strong> Local searchers have the highest intent. They're in your delivery area right now. You can afford higher bids because conversion is higher. This campaign shows you which cities convert best.</p>
+            </div>
+
+            <h3 style="margin-top: 3rem;">Within Each Campaign: Ad Groups</h3>
+            <p>Each campaign has 3-5 ad groups, each targeting a specific keyword cluster:</p>
+            <p style="background: var(--light-gray); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <strong>Example:</strong> Core Services campaign has ad groups for: (1) Bounce Houses, (2) Water Slides, (3) Combo Units, (4) Inflatable Games. Each ad group has its own keywords, ads, and landing page.
+            </p>
+
+            <p style="margin-top: 2rem; padding: 1.5rem; background: #FFF4E5; border-radius: 8px; border-left: 4px solid #E67E22;">
+                <strong>Why this matters:</strong> Each campaign gets its own budget, so you can see which category performs best (birthdays vs. corporate events, for example). Ad groups let you write highly relevant ads for each keyword cluster, which improves your Quality Score and lowers your costs.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 4: Negative Keywords -->
+    <section id="negative-keywords">
+        <div class="container">
+            <h2>Negative Keywords: Stop Wasting Money</h2>
+            <p>Negative keywords tell Google: "Never show my ad for these words." They're your defense against irrelevant clicks.</p>
+
+            <h3>Critical Negative Keywords for Bounce House Businesses</h3>
+            <div class="negative-keyword-list">
+                <div class="negative-keyword animate-on-scroll">
+                    <strong>buy</strong>
+                    <p>You rent, not sell. Block people looking to purchase equipment.</p>
+                </div>
+                <div class="negative-keyword animate-on-scroll">
+                    <strong>for sale</strong>
+                    <p>People looking to purchase equipment, not rent.</p>
+                </div>
+                <div class="negative-keyword animate-on-scroll">
+                    <strong>DIY</strong>
+                    <p>People who want to do it themselves, not hire you.</p>
+                </div>
+                <div class="negative-keyword animate-on-scroll">
+                    <strong>free</strong>
+                    <p>People explicitly looking for free options. Wrong audience.</p>
+                </div>
+                <div class="negative-keyword animate-on-scroll">
+                    <strong>job / hiring / career</strong>
+                    <p>Job seekers, not customers.</p>
+                </div>
+                <div class="negative-keyword animate-on-scroll">
+                    <strong>how to start</strong>
+                    <p>People wanting to start their own bounce house business, not rent from you.</p>
+                </div>
+                <div class="negative-keyword animate-on-scroll">
+                    <strong>insurance / license</strong>
+                    <p>Industry research and compliance questions, not customers.</p>
+                </div>
+                <div class="negative-keyword animate-on-scroll">
+                    <strong>used</strong>
+                    <p>If you only rent new equipment, block used searches.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 3rem;">Competitor Brands (Advanced)</h3>
+            <p>Should you bid on competitor brand names? Generally <strong>no</strong> unless you have specific approval and budget. Instead, add them as negatives so you're not paying when someone searches "Bounceland" or another competitor.</p>
+
+            <h3>Weekly Habit: Check Your Search Terms Report</h3>
+            <p style="background: var(--light-gray); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                Go into Google Ads every week and check "Search Terms" in your campaign. You'll see the actual searches that triggered your ads. Look for irrelevant searches and add them as negatives. This is how you continuously optimize and lower wasted spend.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 5: Ad Extensions -->
+    <section id="ad-extensions">
+        <div class="container">
+            <h2>Ad Extensions That Get More Clicks</h2>
+            <p>Extensions give your ad more real estate and more reasons to click. Don't skip this—extensions can improve click-through rates by 20-50%.</p>
+
+            <ul class="extension-list">
+                <li class="extension-item animate-on-scroll">
+                    <strong>Sitelink Extensions</strong>
+                    <p>Link to specific pages on your site directly from the ad. Examples: "Water Slides" → water slide rental page, "Book Now" → booking page, "Gallery" → equipment photos, "Pricing" → pricing page. Users click what they want without going to your homepage.</p>
+                </li>
+
+                <li class="extension-item animate-on-scroll">
+                    <strong>Call Extensions</strong>
+                    <p>Add your phone number to your ad. Mobile users can tap to call instantly. This is huge for service businesses—many people prefer to call rather than click to a website. You'll see phone call conversions in your tracking.</p>
+                </li>
+
+                <li class="extension-item animate-on-scroll">
+                    <strong>Location Extensions</strong>
+                    <p>Connect to your Google Business Profile to show your address, hours, and a map click-to-directions button. Local searchers see exactly where you are and can navigate to you directly from the ad.</p>
+                </li>
+
+                <li class="extension-item animate-on-scroll">
+                    <strong>Callout Extensions</strong>
+                    <p>Short text callouts that appear below your ad. Use these to highlight competitive advantages: "Free Delivery," "Same-Day Availability," "Insured & Licensed," "Set Up Included," "12+ Years in Business," "Available Weekends."</p>
+                </li>
+
+                <li class="extension-item animate-on-scroll">
+                    <strong>Price Extensions</strong>
+                    <p>Show starting prices for different rental categories directly in your ad. Example: "Bounce Houses starting at $89," "Water Slides from $149," "Combo Units $199+." Sets expectations and filters out people with low budgets.</p>
+                </li>
+
+                <li class="extension-item animate-on-scroll">
+                    <strong>Promotion Extensions</strong>
+                    <p>Highlight special offers: "Book Today, 10% Off," "Weekend Specials," "Refer a Friend, $50 Credit." Limited-time promotions create urgency and boost clicks.</p>
+                </li>
+            </ul>
+
+            <p style="margin-top: 2rem; padding: 1.5rem; background: #E5F3FF; border-radius: 8px; border-left: 4px solid var(--primary);">
+                <strong>Implementation:</strong> Set up all six extension types at the account level (they apply to all campaigns), then customize specific extensions at the campaign level for better relevance.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 6: Landing Pages -->
+    <section id="landing-pages">
+        <div class="container">
+            <h2>Landing Pages: Where Most Owners Fail</h2>
+            <p>This is the biggest mistake: sending all ad traffic to your homepage. Your ad says "bounce house rental Denver" but then people land on a generic homepage with no clear Denver content. They bounce immediately.</p>
+
+            <div class="do-dont animate-on-scroll">
+                <div class="do-box">
+                    <h4>✓ Do This (Right)</h4>
+                    <ul>
+                        <li>Ad: "Bounce house rental Denver" → Denver-specific landing page</li>
+                        <li>Ad: "Water slide rental" → Water slide product page</li>
+                        <li>Ad: "Birthday party rentals" → Birthday party package page</li>
+                        <li>Ad copy matches landing page headline</li>
+                        <li>Phone number visible above the fold</li>
+                        <li>Clear CTA button (Book Now, Get Quote, Call)</li>
+                        <li>Social proof (reviews, testimonials)</li>
+                        <li>Photos of your equipment</li>
+                        <li>Mobile-optimized</li>
+                    </ul>
+                </div>
+
+                <div class="dont-box">
+                    <h4>✗ Don't Do This (Wrong)</h4>
+                    <ul>
+                        <li>All ads point to homepage</li>
+                        <li>Ad says one thing, landing page says another</li>
+                        <li>Phone number is hidden in footer</li>
+                        <li>No clear CTA button</li>
+                        <li>Generic stock photos</li>
+                        <li>No reviews or social proof</li>
+                        <li>Not mobile-friendly</li>
+                        <li>Slow loading time</li>
+                        <li>Confusing navigation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Key Landing Page Elements</h3>
+            <p style="background: var(--light-gray); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <strong>Above the fold (first thing people see):</strong> Phone number, product/service headline matching your ad, hero image of your equipment, clear CTA button.
+            </p>
+
+            <p style="background: var(--light-gray); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <strong>Middle section:</strong> Photos of your actual equipment in use, customer reviews and testimonials, pricing or "starting at" information, service details (delivery, setup, insurance).
+            </p>
+
+            <p style="background: var(--light-gray); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <strong>Bottom section:</strong> More reviews, FAQ, safety information, another CTA button, contact information.
+            </p>
+
+            <p style="margin-top: 2rem; padding: 1.5rem; background: #FFE5E5; border-radius: 8px; border-left: 4px solid #C41E3A;">
+                <strong>⚠️ The metric that matters:</strong> Landing page conversion rate. If your ad drives 100 clicks and 15 become leads/bookings, that's a 15% conversion rate. A poorly designed landing page might drop this to 3%. The difference between profitability and losing money.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 7: Conversion Tracking -->
+    <section id="conversion-tracking">
+        <div class="container">
+            <h2>Conversion Tracking: Know Your ROI</h2>
+            <p>This separates owners who waste money from owners who print money. You need to know exactly which keywords and ads drive actual bookings.</p>
+
+            <h3>The Conversion Tracking Formula</h3>
+            <p style="font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem;">Ad Spend ÷ Bookings = Cost Per Booking</p>
+
+            <div class="tracking-metric animate-on-scroll">
+                <span class="metric-label">Example Scenario:</span>
+                <p><strong>Monthly ad spend:</strong> $1,000</p>
+                <p><strong>Bookings from ads:</strong> 10</p>
+                <p><strong>Cost Per Acquisition (CPA):</strong> $100 per booking</p>
+                <p><strong>Average booking value:</strong> $350</p>
+                <p><strong>Return on Ad Spend (ROAS):</strong> 3.5x (for every $1 spent, you make $3.50)</p>
+                <p style="margin-top: 1rem; color: #22863A; font-weight: 600;">✓ This is profitable. Keep scaling.</p>
+            </div>
+
+            <h3>What to Track</h3>
+            <ul class="extension-list">
+                <li class="extension-item">
+                    <strong>Online Form Submissions</strong>
+                    <p>When someone fills out your "Request a Quote" form on your website from an ad click.</p>
+                </li>
+                <li class="extension-item">
+                    <strong>Phone Calls from Ads</strong>
+                    <p>When someone calls the phone number in your ad extension. Google tracks this as a conversion.</p>
+                </li>
+                <li class="extension-item">
+                    <strong>Purchases/Bookings</strong>
+                    <p>If you have an online booking system, track completed bookings. This is the gold standard.</p>
+                </li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">How to Set It Up</h3>
+            <p>Use Google Tag Manager (GTM) and Google Ads conversion tracking. When someone completes a desired action (fills form, completes booking, calls), Google records it as a conversion. Your conversion tracking dashboard then shows you:</p>
+
+            <div style="background: var(--light-gray); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; list-style: none;">
+                <p>✓ Which keywords drive the most conversions</p>
+                <p>✓ Which ads perform best</p>
+                <p>✓ Which landing pages convert highest</p>
+                <p>✓ Your exact Cost Per Acquisition</p>
+                <p>✓ Your Return on Ad Spend (ROAS)</p>
+            </div>
+
+            <p style="margin-top: 2rem; padding: 1.5rem; background: #E5F3FF; border-radius: 8px; border-left: 4px solid var(--primary);">
+                <strong>Without tracking:</strong> You're flying blind. You don't know if you're profitable or burning money. You can't optimize. You can't scale what works.</p>
+                <p style="margin-top: 1rem;"><strong>With tracking:</strong> You see exactly what works. You can scale winning keywords and pause losers. You can calculate your true ROI and know whether to increase or decrease spending.</p>
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 8: Budget & Bidding -->
+    <section id="budget-bidding">
+        <div class="container">
+            <h2>Budget & Bidding Strategy</h2>
+
+            <h3>Starting Budget</h3>
+            <div class="budget-box animate-on-scroll">
+                <h4>Start with $20-50 per day to test</h4>
+                <p style="margin: 0;">That's $600-$1,500 per month. This gives you enough volume to:</p>
+                <ul style="margin: 1rem 0 0 0;">
+                    <li>Generate meaningful data on which keywords work</li>
+                    <li>Test different landing pages and ads</li>
+                    <li>Get enough conversions to track ROI</li>
+                    <li>Not risk huge losses while learning</li>
+                </ul>
+            </div>
+
+            <h3>Bidding Strategies</h3>
+            <p><strong>Phase 1 (First 2-3 months):</strong> Use "Manual CPC" (Cost Per Click) or "Maximize Clicks" bidding. You control how much you bid on each keyword. This teaches you what clicks cost and which keywords are worth the money.</p>
+
+            <p><strong>Phase 2 (After 15+ conversions/month):</strong> Switch to "Maximize Conversions" bidding. Google's AI automatically adjusts your bids to drive as many conversions as possible within your daily budget. Once you have enough data, this usually outperforms manual bidding.</p>
+
+            <h3>Targeting Strategy</h3>
+            <div style="background: var(--light-gray); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <p><strong>Geographic Targeting:</strong> Only show ads in your delivery area. Set a radius around your location (usually 10-25 miles depending on your service area). Don't pay for clicks outside your service area—you can't fulfill those bookings.</p>
+            </div>
+
+            <div style="background: var(--light-gray); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <p><strong>Ad Scheduling:</strong> Show ads during peak booking times. Most party planning happens in the evenings and on weekends. You can reduce or pause ads during slow times (middle of the night, weekday mornings) to save budget.</p>
+            </div>
+
+            <h3>When to Increase/Decrease Budget</h3>
+            <p style="background: #E5F3FF; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--primary); margin: 1rem 0;">
+                <strong>Increase budget if:</strong> Cost per acquisition is below your profitable threshold AND you have more booking capacity. If $100 CPA is profitable and you can handle more bookings, scale up.
+            </p>
+
+            <p style="background: #FFE5E5; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #C41E3A; margin: 1rem 0;">
+                <strong>Decrease/pause budget if:</strong> Cost per acquisition exceeds profitable threshold OR you don't have capacity to fulfill bookings. No point paying for leads you can't serve.
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="border-bottom: none;">
+        <div class="container">
+            <div class="final-cta">
+                <h3>Google Ads: Your Biggest Revenue Driver or Biggest Money Pit</h3>
+                <p>The difference comes down to setup. Match types, campaign structure, landing pages, conversion tracking—get these right and Google Ads becomes your most predictable way to drive bookings. Get them wrong and you're just throwing money away.</p>
+                <p>KO Marketing Agency specializes in managing Google Ads campaigns specifically for bounce house and party rental businesses. We handle the strategy, testing, and optimization so you can focus on running your business.</p>
+                <a href="hire-us.html" class="cta-button">Get Your Google Ads Strategy</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 KO Marketing Agency. Helping bounce house and party rental businesses dominate local search.</p>
+    </footer>
+
+    <script>
+        // Scroll animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add stagger to animated elements
+        document.querySelectorAll('.animate-on-scroll').forEach((el, index) => {
+            el.style.animationDelay = (index * 0.1) + 's';
+        });
+    </script>
+</body>
+</html>

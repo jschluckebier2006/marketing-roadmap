@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niche Expansion - KO Marketing Roadmap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #020817;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: #020817;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.7);
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+            padding: 0.3rem 0.5rem;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        nav a.active {
+            color: #4461F2;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4461F2 0%, #020817 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInDown 0.8s ease forwards;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+        .section:nth-child(5) { animation-delay: 1s; }
+        .section:nth-child(6) { animation-delay: 1.2s; }
+
+        h2 {
+            font-size: 2rem;
+            color: #4461F2;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #020817;
+            margin: 1.5rem 0 0.75rem 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: #4461F2;
+            font-weight: 600;
+        }
+
+        /* Niche Cards */
+        .niche-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .niche-card {
+            background: #f8f9ff;
+            border: 2px solid #e0e4ff;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .niche-card:hover {
+            border-color: #4461F2;
+            box-shadow: 0 8px 24px rgba(68, 97, 242, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .niche-card h4 {
+            font-size: 1.2rem;
+            color: #4461F2;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .niche-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* Highlight Box */
+        .highlight {
+            background: #f0f4ff;
+            border-left: 4px solid #4461F2;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight p {
+            margin: 0;
+            color: #020817;
+        }
+
+        /* CTA Button */
+        .cta-section {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            border-radius: 12px;
+            border: 2px solid #e0e4ff;
+        }
+
+        .cta-section h3 {
+            margin-top: 0;
+            color: #4461F2;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #4461F2;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #020817;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(68, 97, 242, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                gap: 1rem;
+                padding: 1rem;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .niche-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gbp.html">Google Business</a>
+        <a href="website.html">Website</a>
+        <a href="seo.html">SEO</a>
+        <a href="google-ads.html">Google Ads</a>
+        <a href="social-media.html">Social Media</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="automation.html">Automation</a>
+        <a href="niche.html" class="active">Niche</a>
+        <a href="ai.html">AI</a>
+        <a href="hire-us.html">Hire Us</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Niche Expansion</h1>
+        <p>Less Competition. Higher Margins. More Revenue.</p>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Why Niche Services = Less Competition + Higher Margins</h2>
+            <p>You're right. "Bounce house rental [city]" has TONS of competition. Every search returns 10+ competitors all fighting for the same keywords and customers.</p>
+            <p>But what about <strong>"Foam party rental [city]"</strong> or <strong>"Mechanical bull rental [city]"</strong>? Almost NOBODY is targeting these terms.</p>
+
+            <div class="highlight">
+                <p><strong>The Math:</strong> Niche services often command 30-50% higher prices AND face 80% less competition in search rankings. Each niche service opens up entirely new search terms and customer segments.</p>
+            </div>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gbp.html">Google Business</a></li>
+                <li><a href="website.html">Website</a></li>
+                <li><a href="seo.html">SEO</a></li>
+                <li><a href="google-ads.html">Google Ads</a></li>
+                <li><a href="social-media.html">Social Media</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="automation.html">Automation</a></li>
+                <li><a href="niche.html" style="color:#4461F2">Niche</a></li>
+                <li><a href="ai.html">AI</a></li>
+                <li><a href="hire-us.html">Hire Us</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>High-Margin Niche Services</h2>
+
+            <div class="niche-grid">
+                <div class="niche-card">
+                    <h4>🫧 Foam Parties</h4>
+                    <p>Massive trend in party rentals. High-margin add-on with dedicated landing page. Target keywords like "foam party [city]" and "foam cannon rental."</p>
+                </div>
+                <div class="niche-card">
+                    <h4>🤠 Mechanical Bulls</h4>
+                    <p>Hugely popular for corporate events, graduations, and adult parties. Different audience than bounce houses with less competition.</p>
+                </div>
+                <div class="niche-card">
+                    <h4>⛳ Mini Golf / Portable Golf</h4>
+                    <p>Growing trend for corporate team-building and upscale parties. Family-friendly entertainment for HOA events and community gatherings.</p>
+                </div>
+                <div class="niche-card">
+                    <h4>📸 Photo Booths</h4>
+                    <p>High margin, low labor. Easy to upsell with backdrops and props. Pairs perfectly with party rentals.</p>
+                </div>
+                <div class="niche-card">
+                    <h4>🎯 Axe Throwing (Portable)</h4>
+                    <p>Growing in popularity. Portable option for corporate events, bachelor/bachelorette parties, team-building.</p>
+                </div>
+                <div class="niche-card">
+                    <h4>🔫 Laser Tag (Portable)</h4>
+                    <p>Appeals to kids and teens. Upsell add-on to bounce house rentals. Easy to market to parents.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Other High-Margin Add-Ons</h3>
+            <ul>
+                <li><strong>Dunk Tanks</strong> - Perfect summer add-on, high profit margin</li>
+                <li><strong>Snow Cone & Cotton Candy Machines</strong> - Upsell with every party rental</li>
+                <li><strong>Tent, Table & Chair Rentals</strong> - Expand into event rentals, bundled pricing</li>
+                <li><strong>Water Slides</strong> - Summer premium service, high price point</li>
+                <li><strong>Obstacle Courses</strong> - Family-friendly, high engagement</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Foam Parties - The Deep Dive</h2>
+            <p>Foam parties are one of the hottest trends in event rentals right now. Here's why they're so profitable:</p>
+            <ul>
+                <li><strong>Growing Demand:</strong> Search volume for "foam party" has increased 250% in the last 3 years</li>
+                <li><strong>High Price Point:</strong> $300-$800 per event (vs. $150-$400 for bounce houses)</li>
+                <li>Low Competition: Most party rental companies don't offer this service yet</li>
+                <li>Easy Upsell: Add foam to existing bounce house bookings</li>
+                <li>Become a Foam Daddy Dealer: Official partners get marketing support and equipment discounts</li>
+            </ul>
+
+            <div class="highlight">
+                <p><strong>Action Item:</strong> Build a dedicated foam party landing page on your website. Target keywords like "foam party [city]," "foam cannon rental [city]," and "foam dance party." Write blog posts about foam party ideas for kids, adults, and corporate events.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Mechanical Bulls - The Corporate Angle</h2>
+            <p>Mechanical bulls aren't just for country bars anymore. Here's who wants them:</p>
+            <ul>
+                <li><strong>Corporate Events:</strong> Team-building, company picnics, office parties</li>
+                <li><strong>Graduations:</strong> Senior class events, college parties</li>
+                <li><strong>Adult Parties:</strong> Bachelor/bachelorette events, 21+ birthday parties</li>
+                <li><strong>Western/Rodeo Events:</strong> Theme parties, fundraisers</li>
+                <li><strong>Bars & Venues:</strong> Weekend entertainment, special events</li>
+            </ul>
+            <p>This is a totally different customer base than bounce houses. And because there's minimal competition, you can own this market in your area.</p>
+
+            <div class="highlight">
+                <p><strong>Action Item:</strong> Build a dedicated mechanical bull page with videos and testimonials. Create content around "mechanical bull rental [city]" and "corporate event rentals." Partner with corporate event planners and bars in your area.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>The SEO Strategy for Niche Services</h2>
+            <p>Don't just add these services to your main website. Give each one the SEO attention it deserves:</p>
+
+            <h3>1. Build Dedicated Landing Pages</h3>
+            <ul>
+                <li>Each niche service gets its own page with unique content</li>
+                <li>Each page gets its own schema markup (LocalBusiness, Service schema)</li>
+                <li>Each page is optimized for specific keywords</li>
+            </ul>
+
+            <h3>2. City-Specific Niche Pages</h3>
+            <p>Go beyond "Foam Party Rental." Create pages for:</p>
+            <ul>
+                <li>"Foam Party Rental in [City]"</li>
+                <li>"Foam Party Rental in [Suburb 1]"</li>
+                <li>"Foam Party Rental in [Suburb 2]"</li>
+            </ul>
+
+            <h3>3. Google Business Profile Optimization</h3>
+            <ul>
+                <li>Add each niche service to your GBP services section</li>
+                <li>Write keyword-rich 300-character service descriptions</li>
+                <li>Example: "Premium foam party rentals in [City] - foam cannons, LED lights, DJ services. Same-day bookings available. Call for quotes."</li>
+            </ul>
+
+            <h3>4. Content & Blogging</h3>
+            <ul>
+                <li>"Top 5 Foam Party Ideas for Teens"</li>
+                <li>"How to Plan the Perfect Mechanical Bull Party"</li>
+                <li>"Corporate Team Building Ideas: Why Mechanical Bulls Work"</li>
+                <li>"Mini Golf Rentals for Corporate Events"</li>
+            </ul>
+
+            <h3>5. Schema Markup</h3>
+            <p>Every niche service page should have schema markup including:</p>
+            <ul>
+                <li>LocalBusiness schema (your business info)</li>
+                <li>Service schema (service name, description, price range)</li>
+                <li>AggregateRating schema (if you have reviews)</li>
+            </ul>
+        </div>
+
+        <div class="cta-section">
+            <h3>Ready to Add Niche Services to Your Business?</h3>
+            <p>This strategy alone can add 30-50% to your annual revenue. But it takes time, content creation, and optimization.</p>
+            <a href="hire-us.html" class="cta-button">Let's Build Your Niche Strategy</a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll and active nav link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Set active nav based on current page
+        const currentPage = window.location.pathname.split('/').pop() || 'niche.html';
+        document.querySelectorAll('nav a').forEach(link => {
+            if (link.href.includes(currentPage)) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // Niche card hover effect
+        document.querySelectorAll('.niche-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

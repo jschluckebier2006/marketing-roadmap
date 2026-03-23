@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media & Content Strategy for Party Rental Businesses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4461F2;
+            --dark: #020817;
+            --white: #FFFFFF;
+            --light-gray: #F8F9FA;
+            --medium-gray: #E9ECEF;
+            --text-dark: #1A1F36;
+            --text-light: #6B7280;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--dark);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #5B76FF 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .section-number {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: var(--light-gray);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 6px 6px 0;
+            animation: fadeInLeft 0.6s ease;
+        }
+
+        .highlight-box p {
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        li {
+            padding: 0.75rem 0 0.75rem 2.5rem;
+            position: relative;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--primary);
+            animation: fadeInUp 0.6s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(68, 97, 242, 0.12);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .platform-item {
+            background: var(--white);
+            border: 2px solid var(--medium-gray);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .platform-item:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(68, 97, 242, 0.1);
+        }
+
+        .platform-item h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .content-calendar {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            min-width: 600px;
+        }
+
+        .calendar-day {
+            background: var(--white);
+            padding: 1.5rem 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary);
+            text-align: center;
+        }
+
+        .calendar-day strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .calendar-day p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #5B76FF 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+            border-radius: 12px;
+            text-align: center;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--white);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 3rem 0;
+            align-items: center;
+        }
+
+        .problem-box, .solution-box {
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .problem-box {
+            background: #FFE9E9;
+            border-left: 4px solid #FF6B6B;
+        }
+
+        .problem-box h3 {
+            color: #CC5555;
+            margin-top: 0;
+        }
+
+        .solution-box {
+            background: #E9F3FF;
+            border-left: 4px solid var(--primary);
+        }
+
+        .solution-box h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .problem-solution {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .hashtag-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .hashtag-group {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .hashtag-group h4 {
+            color: var(--primary);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hashtag-group p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .review-flow {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .flow-step {
+            display: flex;
+            align-items: flex-start;
+            margin: 1.5rem 0;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .flow-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .flow-number {
+            background: var(--primary);
+            color: var(--white);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .flow-content h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .flow-content p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">KO Social</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gbp.html">Google Business</a></li>
+                <li><a href="website.html">Website</a></li>
+                <li><a href="seo.html">SEO</a></li>
+                <li><a href="google-ads.html">Google Ads</a></li>
+                <li><a href="social-media.html" style="color:#4461F2">Social Media</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="automation.html">Automation</a></li>
+                <li><a href="niche.html">Niche</a></li>
+                <li><a href="ai.html">AI</a></li>
+                <li><a href="hire-us.html">Hire Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Social Media for Party Rental Businesses</h1>
+            <p>Turn your bounce house rentals into a booked-solid business with smart, consistent social media that actually drives bookings</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Section 1: Why Social Media Matters -->
+        <section id="why-social-media" class="scroll-reveal">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <h2>Why Social Media Matters for Party Rentals</h2>
+            </div>
+
+            <p>If you're not actively posting on social media, you're leaving money on the table. Here's why:</p>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Social Proof Matters</h3>
+                    <p>Parents see your posts and think "they're legit." A business with an active, professional social presence looks more established and trustworthy than one with no online presence at all.</p>
+                </div>
+                <div class="card">
+                    <h3>Visibility = Bookings</h3>
+                    <p>Facebook, Instagram, and Google Business posts keep you top of mind. When someone is scrolling through their feed planning a party, you want YOUR bounce house to be visible.</p>
+                </div>
+                <div class="card">
+                    <h3>Referrals Through Posts</h3>
+                    <p>When someone asks "who rents bounce houses?" in a Facebook group, people share businesses they've actually SEEN posting. Being visible means being recommended.</p>
+                </div>
+                <div class="card">
+                    <h3>Consistency = Algorithm Love</h3>
+                    <p>Posting 3x per week beats posting 10x in one week and then nothing for a month. Social media algorithms reward consistency. They punish accounts that go silent.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>The Bottom Line:</strong> Your competitors are posting. Parents are seeing them. Even if they forget the name, they remember seeing their posts. Don't let your competition own that mindshare.
+            </div>
+        </section>
+
+        <!-- Section 2: Platforms That Matter -->
+        <section id="platforms" class="scroll-reveal">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <h2>The Platforms That Matter</h2>
+            </div>
+
+            <p>Not all social platforms are created equal for party rental businesses. Here's where your efforts should go:</p>
+
+            <div class="platform-item">
+                <h3>Facebook - Your #1 Priority</h3>
+                <p>Still the undisputed king for party rental businesses. Parents live on Facebook. Local community groups drive bookings. Facebook Business Pages have a massive reach in your local area, and parents actively search for party services here. Your Google Business Profile also integrates with Facebook, amplifying your visibility.</p>
+            </div>
+
+            <div class="platform-item">
+                <h3>Instagram - Visual Storytelling</h3>
+                <p>A visual platform perfect for showing off your equipment at events. Event photos, before/after setups, and happy kids are Instagram gold. Reels (short videos) perform incredibly well. The younger, more tech-savvy crowd discovers you here, and they're the fastest to share recommendations.</p>
+            </div>
+
+            <div class="platform-item">
+                <h3>Google Business Posts - Direct Impact</h3>
+                <p>These directly impact your Google Business Profile (GBP) ranking. When someone searches "bounce house rentals near me," your posts can show up right in the search results. This is immediate visibility to people actively looking to rent.</p>
+            </div>
+
+            <div class="platform-item">
+                <h3>TikTok - Optional, Growing</h3>
+                <p>Still emerging for party rentals, but behind-the-scenes setup videos and fun content perform well. Kids love TikTok, and when their parents see your content there, it increases perceived credibility. Don't prioritize this if Facebook and Instagram aren't solid yet.</p>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Priority Order:</strong> Facebook → Google Business → Instagram → TikTok (bonus)
+            </div>
+        </section>
+
+        <!-- Section 3: Content That Books Parties -->
+        <section id="content" class="scroll-reveal">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <h2>Content That Actually Gets Bookings</h2>
+            </div>
+
+            <p>Not all posts are created equal. Here's the content that drives actual inquiries and bookings:</p>
+
+            <h3>Event Recaps & Real Photos</h3>
+            <p>Share photos and videos from actual events (with permission from the host). Real kids having fun is your best marketing. Behind-the-scenes footage of your setup process shows professionalism.</p>
+
+            <h3>Before & After Setup Shots</h3>
+            <p>Parents love seeing the transformation. An empty backyard, then a professionally set-up bounce house with happy kids. This shows your quality and attention to detail.</p>
+
+            <h3>"Available This Weekend" Posts</h3>
+            <p>Create urgency. "We still have 2 spots open for this Saturday!" encourages bookings. This is your sales post—use it regularly, especially Thursday/Friday.</p>
+
+            <h3>Customer Testimonials & Reviews</h3>
+            <p>Share positive feedback and reviews as social posts. Real words from real customers are powerful. Video testimonials are even better.</p>
+
+            <h3>Safety & Cleanliness Content</h3>
+            <p>Post about your cleaning process, safety checks, and equipment maintenance. Parents have concerns—address them proactively. "Our inflatables are sanitized after every event" builds trust.</p>
+
+            <h3>Seasonal Content</h3>
+            <p>Summer water slides, holiday-themed rentals, Easter themes, back-to-school events. Tie your offerings to what's top of mind for parents right now.</p>
+
+            <h3>Educational Content</h3>
+            <p>"5-Step Birthday Party Planning Checklist" or "How to Choose the Right Bounce House Size." Help parents solve their problems. Educational posts get shared and establish you as a trusted expert.</p>
+
+            <h3>Behind-the-Scenes</h3>
+            <p>Loading inflatables, delivery setup, team in action, cleaning process. People connect with people. Show the human side of your business.</p>
+
+            <div class="highlight-box">
+                <strong>Pro Tip:</strong> Mix promotional (available spots, booking calls) with valuable content (tips, education, testimonials). A good ratio is 70% valuable/educational content, 30% promotional.
+            </div>
+        </section>
+
+        <!-- Section 4: The Problem -->
+        <section id="problem" class="scroll-reveal">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <h2>The Posting Problem (And Why Most Bounce House Owners Struggle)</h2>
+            </div>
+
+            <div class="problem-solution">
+                <div class="problem-box">
+                    <h3>The Reality</h3>
+                    <ul>
+                        <li>You KNOW you should post 3x per week</li>
+                        <li>You're delivering rentals all weekend</li>
+                        <li>Setting up, tearing down, driving constantly</li>
+                        <li>By Monday you're exhausted</li>
+                        <li>Social media falls to the bottom of your list</li>
+                        <li>You post once, maybe twice that week</li>
+                        <li>Next week? Even less activity</li>
+                        <li>Algorithms see you going quiet and bury your posts</li>
+                    </ul>
+                    <p style="margin-bottom: 0;"><strong>Result:</strong> Your reach drops. Fewer people see you. Fewer bookings come in. You blame social media for not working.</p>
+                </div>
+
+                <div class="solution-box">
+                    <h3>The Real Problem</h3>
+                    <p>It's not social media—it's consistency. Inconsistency kills your reach. The algorithm punishes accounts that go quiet. One week of heavy posting followed by two weeks of silence destroys your performance.</p>
+
+                    <p><strong>Here's what happens:</strong></p>
+                    <ul>
+                        <li>Week 1: You post 8 times (doing great!)</li>
+                        <li>Week 2: You post 1 time (busy)</li>
+                        <li>Week 3: You post 0 times (exhausted)</li>
+                        <li>The algorithm notices and reduces reach</li>
+                        <li>Your followers don't see your posts</li>
+                        <li>No bookings come from social</li>
+                    </ul>
+
+                    <p><strong>This is the #1 reason most party rental businesses fail at social media.</strong> Not a lack of good ideas. Not bad content. A lack of consistent, reliable posting.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>The Solution Isn't More Effort—It's Automation</strong>
+            </div>
+        </section>
+
+        <!-- Section 5: The Solution -->
+        <section id="solution" class="scroll-reveal">
+            <div class="section-header">
+                <div class="section-number">5</div>
+                <h2>The Solution: Automate Your Social Media</h2>
+            </div>
+
+            <p>What if you could schedule all your social media posts weeks in advance? What if you never had to scramble on Sunday night trying to think of what to post? What if your posts went out consistently, on autopilot, while you focus on running your business?</p>
+
+            <p><strong>That's exactly what KO Social Software does for bounce house and party rental businesses.</strong></p>
+
+            <h3>KO Social Software Features Built for Party Rentals</h3>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Pre-Built Content Library</h3>
+                    <p>Professionally designed, tested posts ready to customize with your branding. No more staring at a blank screen trying to figure out what to post.</p>
+                </div>
+                <div class="card">
+                    <h3>Auto-Posting Schedule</h3>
+                    <p>Schedule weeks or months of content in advance. Plan when you're not busy, and let the software post consistently while you're delivering rentals.</p>
+                </div>
+                <div class="card">
+                    <h3>Multi-Platform Publishing</h3>
+                    <p>Posts to Facebook, Instagram, and Google Business from one dashboard. No more logging into three different accounts and copying/pasting content.</p>
+                </div>
+                <div class="card">
+                    <h3>Industry-Specific Templates</h3>
+                    <p>Built specifically for party rental businesses. Not generic social media tools. Every template is designed for what actually works in your industry.</p>
+                </div>
+            </div>
+
+            <h3>The Real Benefit: Consistency on Autopilot</h3>
+
+            <p>With KO Social Software, you can:</p>
+            <ul>
+                <li>Spend 2-3 hours on a Sunday planning your month of posts</li>
+                <li>Schedule them all in advance using the content library</li>
+                <li>Never think about social media posting again</li>
+                <li>Your posts go out 3x per week, consistently, without fail</li>
+                <li>The algorithm sees consistent activity and rewards your reach</li>
+                <li>More people see your posts → More bookings come in</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>No Sunday Night Scrambling</strong> - No remembering to post while you're exhausted after a weekend of events. No inconsistency. No algorithm penalty. Just reliable, consistent social media working for you.
+            </div>
+        </section>
+
+        <!-- Section 6: Content Calendar Strategy -->
+        <section id="calendar" class="scroll-reveal">
+            <div class="section-header">
+                <div class="section-number">6</div>
+                <h2>Content Calendar Strategy</h2>
+            </div>
+
+            <p>Don't guess what to post each day. Use a proven framework. Here's a weekly content calendar that works for bounce house rentals:</p>
+
+            <div class="content-calendar">
+                <div class="calendar-grid">
+                    <div class="calendar-day">
+                        <strong>Monday</strong>
+                        <p>Motivational or Educational Post</p>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--primary);">Planning tips, party ideas, checklists</p>
+                    </div>
+                    <div class="calendar-day">
+                        <strong>Tuesday</strong>
+                        <p>Equipment Spotlight</p>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--primary);">Feature a specific bounce house or rental</p>
+                    </div>
+                    <div class="calendar-day">
+                        <strong>Wednesday</strong>
+                        <p>Customer Testimonial</p>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--primary);">Review or feedback from a happy customer</p>
+                    </div>
+                    <div class="calendar-day">
+                        <strong>Thursday</strong>
+                        <p>Behind the Scenes</p>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--primary);">Setup, cleaning, team, or process</p>
+                    </div>
+                    <div class="calendar-day">
+                        <strong>Friday</strong>
+                        <p>Weekend Availability</p>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--primary);">Booking call to action</p>
+                    </div>
+                    <div class="calendar-day">
+                        <strong>Saturday</strong>
+                        <p>Event Recap/Photo</p>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--primary);">From current/recent events</p>
+                    </div>
+                    <div class="calendar-day">
+                        <strong>Sunday</strong>
+                        <p>Fun/Engaging</p>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--primary);">Poll, question, meme, or viral angle</p>
+                    </div>
+                </div>
+            </div>
+
+            <p><strong>Why This Works:</strong> Variety keeps your feed interesting. You're alternating between helpful content, promotional content, social content, and entertainment. Followers don't get bored. Each type of post serves a different purpose in building trust and driving bookings.</p>
+
+            <div class="highlight-box">
+                <strong>Pro Tip:</strong> Use KO Social Software to build out 4-8 weeks of this calendar in advance. Create variations on each theme (multiple Monday motivational posts, multiple Tuesday equipment spotlights, etc.). Then schedule them all. Easy.
+            </div>
+        </section>
+
+        <!-- Section 7: Hashtag Strategy -->
+        <section id="hashtags" class="scroll-reveal">
+            <div class="section-header">
+                <div class="section-number">7</div>
+                <h2>Hashtag Strategy for Discoverability</h2>
+            </div>
+
+            <p>Hashtags increase discoverability. But not all hashtags are created equal. Use a mix of local, industry, and event-specific hashtags:</p>
+
+            <div class="hashtag-columns">
+                <div class="hashtag-group">
+                    <h4>Local Hashtags</h4>
+                    <p>#[City]Events #[City]BirthdayParty #[City]MomLife #[City]FamilyFun #[City]Kids #Local[City]Business</p>
+                </div>
+                <div class="hashtag-group">
+                    <h4>Industry Hashtags</h4>
+                    <p>#BounceHouseRental #PartyRentals #InflatableRentals #BounceHouse #EventRental #RentThisBounceHouse</p>
+                </div>
+                <div class="hashtag-group">
+                    <h4>Event Hashtags</h4>
+                    <p>#BirthdayParty #KidsParty #SchoolFieldDay #CommunityEvent #FamilyFun #PartyIdeas</p>
+                </div>
+                <div class="hashtag-group">
+                    <h4>Seasonal/Trending</h4>
+                    <p>#SummerFun #HolidayParty #BackToSchool #VirtualReality (adjust based on season/trends)</p>
+                </div>
+            </div>
+
+            <h3>How Many Hashtags?</h3>
+            <p><strong>Quality over quantity.</strong> Use 10-15 targeted hashtags, not 30 random ones. Research hashtags that are actually used in your area and by your target audience. A well-researched hashtag with lower volume is better than a generic one everyone uses.</p>
+
+            <div class="highlight-box">
+                <strong>Hashtag Research Tip:</strong> Look at what hashtags successful local competitors are using. Start there, then customize for your specific location and offerings.
+            </div>
+        </section>
+
+        <!-- Section 8: Review Generation -->
+        <section id="reviews" class="scroll-reveal">
+            <div class="section-header">
+                <div class="section-number">8</div>
+                <h2>Amplify Social With Reviews</h2>
+            </div>
+
+            <p>Reviews aren't just for Google—they're powerful social media content. Here's how to generate and leverage them:</p>
+
+            <div class="review-flow">
+                <div class="flow-step">
+                    <div class="flow-number">1</div>
+                    <div class="flow-content">
+                        <h4>After Every Event</h4>
+                        <p>Send a follow-up text or email asking for a Google Business review. Make it easy with a direct link. "We'd love your feedback! Here's where you can leave a review..."</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">2</div>
+                    <div class="flow-content">
+                        <h4>Share Reviews on Social</h4>
+                        <p>Your best reviews become social media posts. Screenshot them (with customer permission), design them nicely, and post them. Real customer words are your best marketing.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">3</div>
+                    <div class="flow-content">
+                        <h4>Respond to Every Review</h4>
+                        <p>Reply to reviews on Google and Facebook. Thank positive reviews. Address concerns on negative reviews professionally. This engagement matters for ranking and shows you care.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">4</div>
+                    <div class="flow-content">
+                        <h4>Build Social Proof Loops</h4>
+                        <p>More reviews → Better Google ranking → More visibility → More bookings → More reviews. This cycle builds momentum over time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>The Connection:</strong> Google Business reviews impact your GBP ranking, which affects how often your business appears in Google searches AND Google Business Posts. This ties everything together—social posts, Google visibility, and reviews all working together to drive bookings.
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="scroll-reveal">
+            <div class="cta-section">
+                <h2>Ready to Automate Your Social Media?</h2>
+                <p>Stop struggling with inconsistent posting. Stop exhausted Sundays trying to think of what to share. Start building a social media presence that actually drives bookings.</p>
+                <p><strong>KO Social Software</strong> has a content library built specifically for bounce house and party rental businesses. Pre-built templates, multi-platform posting, and scheduled content. Everything you need to maintain consistent, professional social media without the overwhelm.</p>
+                <a href="https://kosocialsoftware.com" class="cta-button">Visit KO Social Software</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 KO Social Software. Designed for party rental businesses by party rental industry experts.</p>
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

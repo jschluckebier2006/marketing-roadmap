@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website & Conversions - KO Marketing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #020817;
+            background: white;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #4461F2;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #020817;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: #4461F2;
+        }
+
+        .nav-links a.active {
+            color: #4461F2;
+            border-bottom: 2px solid #4461F2;
+            padding-bottom: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4461F2 0%, #020817 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .section.alternate {
+            background: #f9fafb;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #020817;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 30px rgba(68, 97, 242, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 22px;
+            color: #4461F2;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: #555;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .card-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .card-list li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+        }
+
+        .card-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4461F2;
+            font-weight: 700;
+        }
+
+        /* Mockup Section */
+        .mockup-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 60px 0;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .mockup-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .mockup {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .mockup-header {
+            background: #f3f4f6;
+            padding: 15px;
+            border-bottom: 1px solid #e5e7eb;
+            font-weight: 600;
+            color: #020817;
+            font-size: 14px;
+        }
+
+        .mockup-bad {
+            border: 2px solid #ef4444;
+        }
+
+        .mockup-bad .mockup-header {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .mockup-good {
+            border: 2px solid #10b981;
+        }
+
+        .mockup-good .mockup-header {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .mockup-content {
+            padding: 30px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .mockup-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #020817;
+            margin-bottom: 10px;
+        }
+
+        .mockup-text {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .mockup-phone {
+            color: #4461F2;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .mockup-cta {
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .mockup-cta-good {
+            background: #4461F2;
+            color: white;
+            margin-top: auto;
+        }
+
+        .mockup-cta-good:hover {
+            background: #0a2540;
+        }
+
+        .mockup-cta-bad {
+            background: #e5e7eb;
+            color: #999;
+            margin-top: auto;
+            opacity: 0.5;
+        }
+
+        .comparison-label {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .label-good {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .label-bad {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Trust Signals */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .trust-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .trust-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .trust-item h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #020817;
+        }
+
+        .trust-item p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* AI Audit Box */
+        .audit-box {
+            background: linear-gradient(135deg, rgba(68, 97, 242, 0.1), rgba(2, 8, 23, 0.05));
+            border: 2px dashed #4461F2;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .audit-box h3 {
+            font-size: 28px;
+            color: #4461F2;
+            margin-bottom: 15px;
+        }
+
+        .audit-box p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .audit-steps {
+            text-align: left;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        .step {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #4461F2;
+            font-size: 15px;
+        }
+
+        .step-num {
+            font-weight: 700;
+            color: #4461F2;
+        }
+
+        /* Speed Comparison */
+        .speed-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .speed-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .speed-card {
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .speed-good {
+            background: #d1fae5;
+            border: 2px solid #10b981;
+        }
+
+        .speed-bad {
+            background: #fee2e2;
+            border: 2px solid #ef4444;
+        }
+
+        .speed-time {
+            font-size: 48px;
+            font-weight: 800;
+            margin: 15px 0;
+            color: #020817;
+        }
+
+        .speed-conversion {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        .speed-good .speed-conversion {
+            color: #065f46;
+        }
+
+        .speed-bad .speed-conversion {
+            color: #991b1b;
+        }
+
+        /* Checklist */
+        .checklist {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            background: #4461F2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+
+        .checklist-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #020817;
+        }
+
+        .checklist-content p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #4461F2 0%, #020817 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #4461F2;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #020817;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #4461F2;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease;
+        }
+
+        .fade-in-delay {
+            animation: fadeIn 0.8s ease 0.2s both;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 12px;
+            }
+
+            .mockup-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .section {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">KO Marketing</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gbp.html">Google Business</a></li>
+                <li><a href="website.html" style="color:#4461F2">Website</a></li>
+                <li><a href="seo.html">SEO</a></li>
+                <li><a href="google-ads.html">Google Ads</a></li>
+                <li><a href="social-media.html">Social Media</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="automation.html">Automation</a></li>
+                <li><a href="niche.html">Niche</a></li>
+                <li><a href="ai.html">AI</a></li>
+                <li><a href="hire-us.html">Hire Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Website & Conversions Strategy</div>
+            <h1>Your Website Is Your 24/7 Sales Machine</h1>
+            <p>A great website doesn't just look good—it converts visitors into booked customers. Learn exactly what separates top-performing party rental sites from the rest.</p>
+        </div>
+    </div>
+
+    <!-- Section 1: Digital Storefront -->
+    <div class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Website Is Your Digital Storefront</h2>
+                <p>First impressions matter. Your website has just 3 seconds to convince a visitor you're worth hiring.</p>
+            </div>
+            <div class="card fade-in-delay">
+                <h3>The 3-Second Rule</h3>
+                <p>When a parent searches for bounce house rentals, they land on your website. Within 3 seconds, they decide: "Do I want to learn more, or am I bouncing to a competitor?"</p>
+                <p style="margin-top: 15px;"><strong>What happens when your website looks outdated:</strong></p>
+                <ul class="card-list">
+                    <li>Visitors assume your business is outdated or untrustworthy</li>
+                    <li>They don't believe you have modern equipment</li>
+                    <li>They immediately click back and find a competitor</li>
+                    <li>You lose that sale to someone with a better website</li>
+                </ul>
+            </div>
+            <div class="card fade-in-delay">
+                <h3>Your Website's Real Job</h3>
+                <p>Your website isn't a brochure. It's a <strong>conversion machine</strong>. Its one job is to turn curious visitors into booked customers.</p>
+                <p style="margin-top: 15px;"><strong>A high-converting website:</strong></p>
+                <ul class="card-list">
+                    <li>Immediately tells visitors what you do and why you're the best choice</li>
+                    <li>Makes it ridiculously easy to book or get a quote</li>
+                    <li>Builds trust through reviews, photos, and social proof</li>
+                    <li>Works perfectly on phones (because 70%+ of searches are mobile)</li>
+                    <li>Loads fast (speed = conversions)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Above the Fold -->
+    <div class="section alternate">
+        <div class="container">
+            <div class="section-header">
+                <h2>Above the Fold: The Most Important Real Estate</h2>
+                <p>"Above the fold" is everything visible on your screen before scrolling. This is where the magic happens.</p>
+            </div>
+
+            <div class="card">
+                <h3>What Must Be Above the Fold</h3>
+                <ul class="card-list">
+                    <li><strong>Business name and tagline</strong> – Make it clear what you do in 5 words or less</li>
+                    <li><strong>What you do</strong> – "Bounce House Rentals for Birthday Parties" (not "Welcome to our website")</li>
+                    <li><strong>Phone number</strong> – Visible and clickable (tap-to-call on mobile)</li>
+                    <li><strong>CTA button</strong> – "Book Now", "Get a Quote", or "Call Today"</li>
+                    <li><strong>Hero image</strong> – Photo of your actual equipment at a real event (not stock photos)</li>
+                </ul>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h3>Common Above-the-Fold Mistakes (That Kill Conversions)</h3>
+                <ul class="card-list">
+                    <li><strong>Slider/carousel</strong> – They hide your CTA and confuse visitors</li>
+                    <li><strong>No phone number visible</strong> – Visitors shouldn't have to search for how to contact you</li>
+                    <li><strong>Vague headline</strong> – "Welcome to our website" tells people nothing</li>
+                    <li><strong>Stock photos</strong> – People can smell fake instantly. Use real photos of your events</li>
+                    <li><strong>Weak CTA button</strong> – Gray, small, or buried buttons don't convert</li>
+                    <li><strong>No trust signals</strong> – Reviews, years in business, or insurance badges should be visible</li>
+                </ul>
+            </div>
+
+            <!-- Mockup Comparison -->
+            <div style="margin-top: 60px;">
+                <h3 style="text-align: center; font-size: 28px; margin-bottom: 40px; color: #020817;">Good vs Bad Above-the-Fold Design</h3>
+                <div class="mockup-container">
+                    <div>
+                        <div class="mockup mockup-bad">
+                            <div class="mockup-header">❌ WEBSITE THAT LOSES SALES</div>
+                            <div class="mockup-content">
+                                <div>
+                                    <div class="mockup-title">Welcome to Our Website</div>
+                                    <div class="mockup-text">
+                                        We provide quality party rentals. Our team has been in business for many years. Click to learn more about our services...
+                                    </div>
+                                </div>
+                                <button class="mockup-cta mockup-cta-bad">Learn More</button>
+                            </div>
+                        </div>
+                        <div class="comparison-label label-bad">Missing: Phone, clear CTA, what you actually do</div>
+                    </div>
+                    <div>
+                        <div class="mockup mockup-good">
+                            <div class="mockup-header">✓ WEBSITE THAT CONVERTS</div>
+                            <div class="mockup-content">
+                                <div>
+                                    <div class="mockup-title">Bounce House Rentals in [Your City]</div>
+                                    <div class="mockup-text">
+                                        We bring the party to your celebration. 500+ events booked. Licensed & insured.
+                                    </div>
+                                    <div class="mockup-phone">📞 (555) 123-4567</div>
+                                </div>
+                                <button class="mockup-cta mockup-cta-good">Book Now</button>
+                            </div>
+                        </div>
+                        <div class="comparison-label label-good">Clear, specific, phone visible, strong CTA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: AI Website Audit -->
+    <div class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The AI Website Audit Trick</h2>
+                <p>Get professional web design feedback for free using AI.</p>
+            </div>
+
+            <div class="audit-box">
+                <h3>Screenshot + AI = Free $200 Consultation</h3>
+                <p>You can get detailed, actionable feedback on your website (and your competitors') using Claude or ChatGPT. Here's how:</p>
+
+                <div class="audit-steps">
+                    <div class="step">
+                        <span class="step-num">Step 1:</span> Take a screenshot of your website homepage
+                    </div>
+                    <div class="step">
+                        <span class="step-num">Step 2:</span> Open Claude or ChatGPT, paste the screenshot
+                    </div>
+                    <div class="step">
+                        <span class="step-num">Step 3:</span> Ask: "Analyze this bounce house rental website. What can I improve for conversions, SEO, and user experience?"
+                    </div>
+                    <div class="step">
+                        <span class="step-num">Step 4:</span> You'll get specific feedback on layout, copy, CTA placement, mobile design, color choices, and trust signals
+                    </div>
+                    <div class="step">
+                        <span class="step-num">Step 5:</span> Do the same for 2-3 top competitor websites. Find what they do well—and beat them on it
+                    </div>
+                </div>
+
+                <p style="margin-top: 30px; font-size: 16px;">
+                    <strong>This is like having a $200/hour web consultant for free.</strong> Use this insight to outpace your competition.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 4: Mobile Optimization -->
+    <div class="section alternate">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mobile Optimization: Where the Real Sales Happen</h2>
+                <p>70%+ of parents searching for party rentals are on their phone. If your site doesn't work on mobile, you're losing sales.</p>
+            </div>
+
+            <div class="card">
+                <h3>Mobile-First Design Non-Negotiables</h3>
+                <ul class="card-list">
+                    <li><strong>Tap-to-call button visible on every page</strong> – Make it easy for someone to call right now</li>
+                    <li><strong>Large, readable text</strong> – If people have to zoom in to read, they leave</li>
+                    <li><strong>Short forms</strong> – Ask for 3 things: name, date, phone. That's it</li>
+                    <li><strong>One-hand navigation</strong> – Buttons and links should be reachable with one hand</li>
+                    <li><strong>Fast load time on 4G</strong> – Test on actual mobile devices, not just desktop</li>
+                    <li><strong>Click-to-call buttons</strong> – Use tel: links so people can call with one tap</li>
+                </ul>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h3>How to Test Mobile Experience</h3>
+                <p style="margin-bottom: 15px;">Don't just look at your website on your phone's browser. Actually use it like a customer would:</p>
+                <ul class="card-list">
+                    <li>Search on Google for your business on your phone</li>
+                    <li>Click through from your Google Business Profile</li>
+                    <li>Try to find your phone number (should be obvious)</li>
+                    <li>Click the "Book Now" button—is it easy to complete?</li>
+                    <li>Test on different phone sizes (iPhone, Android, etc.)</li>
+                    <li>Test on slow 4G (not WiFi—that's how most people will experience your site)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 5: Trust Signals -->
+    <div class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trust Signals That Convert Visitors Into Customers</h2>
+                <p>People don't hire strangers. They hire businesses they trust. Here's how to build trust on your website.</p>
+            </div>
+
+            <div class="trust-grid">
+                <div class="trust-item fade-in-delay">
+                    <div class="trust-icon">⭐</div>
+                    <h4>Google Reviews</h4>
+                    <p>Embed your Google reviews on your homepage. 5-star reviews are more powerful than any sales copy.</p>
+                </div>
+                <div class="trust-item fade-in-delay">
+                    <div class="trust-icon">📸</div>
+                    <h4>Real Event Photos</h4>
+                    <p>Use actual photos from your events. Real photos beat stock photos every single time.</p>
+                </div>
+                <div class="trust-item fade-in-delay">
+                    <div class="trust-icon">🛡️</div>
+                    <h4>Insurance & Licenses</h4>
+                    <p>Display liability insurance, permits, and safety certifications. These reduce buyer anxiety.</p>
+                </div>
+                <div class="trust-item fade-in-delay">
+                    <div class="trust-icon">👥</div>
+                    <h4>Testimonials w/ Names</h4>
+                    <p>Include customer testimonials with real names and photos. Fake testimonials are obvious and backfire.</p>
+                </div>
+                <div class="trust-item fade-in-delay">
+                    <div class="trust-icon">📰</div>
+                    <h4>As Seen On</h4>
+                    <p>Include local news, radio, or community partnerships. "As seen on" logos build credibility instantly.</p>
+                </div>
+                <div class="trust-item fade-in-delay">
+                    <div class="trust-icon">✓</div>
+                    <h4>Years in Business</h4>
+                    <p>Mention how long you've been operating. "Serving [City] since 2015" builds authority.</p>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 40px;">
+                <h3>How to Collect Trust Assets</h3>
+                <ul class="card-list">
+                    <li>Ask every satisfied customer for a Google review (this is critical)</li>
+                    <li>Ask permission to use their event photos on your website</li>
+                    <li>Screenshot video testimonials from happy customers</li>
+                    <li>Get written testimonials with full name and photo</li>
+                    <li>Display any local news mentions, awards, or certifications</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 6: Speed Kills -->
+    <div class="section alternate">
+        <div class="container">
+            <div class="section-header">
+                <h2>Speed Kills (Slow Sites)</h2>
+                <p>Every second of load time costs you 7% of conversions. A slow website is a losing website.</p>
+            </div>
+
+            <div class="speed-comparison">
+                <div class="speed-card speed-good">
+                    <h4>Fast Site (2 seconds)</h4>
+                    <div class="speed-time">2s</div>
+                    <p>100% conversion rate (baseline)</p>
+                    <div class="speed-conversion">✓ People wait and book</div>
+                </div>
+                <div class="speed-card speed-bad">
+                    <h4>Slow Site (8 seconds)</h4>
+                    <div class="speed-time">8s</div>
+                    <p>-42% conversions</p>
+                    <div class="speed-conversion">✗ 42% of people leave before booking</div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 40px;">
+                <h3>How to Speed Up Your Website</h3>
+                <ul class="card-list">
+                    <li><strong>Compress images</strong> – Use tools like TinyPNG or ImageOptim to reduce file sizes 50-80%</li>
+                    <li><strong>Use a CDN</strong> – Content Delivery Network serves your images from servers near your visitors</li>
+                    <li><strong>Upgrade hosting</strong> – Cheap hosting = slow sites. Invest in quality hosting (WP Engine, Kinsta, etc.)</li>
+                    <li><strong>Minimize plugins</strong> – Each plugin slows your site. Use only essential ones</li>
+                    <li><strong>Test regularly</strong> – Use PageSpeed.web.dev to check your speed monthly</li>
+                    <li><strong>Enable caching</strong> – Browser caching stores elements so repeat visitors load faster</li>
+                </ul>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h3>Test Your Website Speed</h3>
+                <p><strong>Google PageSpeed Insights:</strong> Visit PageSpeed.web.dev, enter your website URL, and get a detailed report. Google shows you exactly what's slowing you down and how to fix it.</p>
+                <p style="margin-top: 15px; color: #666;">Good score: 80+  |  Needs improvement: 50-79  |  Poor: Below 50</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 7: Clear CTAs -->
+    <div class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Clear Calls to Action: Don't Make People Hunt</h2>
+                <p>A visitor should never have to search for how to book with you. Make it obvious.</p>
+            </div>
+
+            <div class="card">
+                <h3>The One-Action Rule</h3>
+                <p>Every page needs ONE clear next step. Not multiple choices—one obvious action.</p>
+                <ul class="card-list">
+                    <li><strong>Homepage:</strong> "Book Now" or "Get a Quote"</li>
+                    <li><strong>Products page:</strong> "Add to Order" or "Request Availability"</li>
+                    <li><strong>About page:</strong> "Start Planning Your Party"</li>
+                    <li><strong>Contact page:</strong> "Send Message" or "Call (XXX) XXX-XXXX"</li>
+                </ul>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h3>CTA Button Best Practices</h3>
+                <ul class="card-list">
+                    <li><strong>Use contrasting colors</strong> – Blue on white pops. Gray blends in (and converts 10% of what a good button does)</li>
+                    <li><strong>Use action words</strong> – "Book Now" beats "Submit". "Call Today" beats "Contact Us"</li>
+                    <li><strong>Make them large</strong> – Mobile users have fat fingers. Buttons should be at least 48x48 pixels</li>
+                    <li><strong>Repeat throughout the page</strong> – Don't make people scroll to the bottom to book. Repeat your CTA in multiple locations</li>
+                    <li><strong>Use urgency wisely</strong> – "Book Today—Slots Filling Up" creates action, but be honest about scarcity</li>
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, rgba(68, 97, 242, 0.1), rgba(2, 8, 23, 0.05)); border-radius: 12px; padding: 30px; margin-top: 30px; text-align: center; border: 1px solid #4461F2;">
+                <p style="font-size: 16px; color: #555; margin-bottom: 20px;">
+                    <strong>Your CTA button should be:</strong>
+                </p>
+                <div style="display: inline-block; background: #4461F2; color: white; padding: 16px 40px; border-radius: 8px; font-weight: 700; font-size: 16px;">
+                    Visible, Actionable, and Obvious
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 8: Essential Pages -->
+    <div class="section alternate">
+        <div class="container">
+            <div class="section-header">
+                <h2>Essential Pages Every Party Rental Site Needs</h2>
+                <p>Not all pages are created equal. Some drive conversions. Others waste space.</p>
+            </div>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checklist-check">1</div>
+                    <div class="checklist-content">
+                        <h4>Homepage</h4>
+                        <p>Above-the-fold CTA, clear value proposition, trust signals, and an obvious path to booking</p>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-check">2</div>
+                    <div class="checklist-content">
+                        <h4>Inventory/Products Page</h4>
+                        <p>Show every bounce house, inflatable, and add-on with clear photos, dimensions, pricing, and availability</p>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-check">3</div>
+                    <div class="checklist-content">
+                        <h4>City-Specific Landing Pages</h4>
+                        <p>Create pages for each city you serve (e.g., "Bounce House Rentals in Denver"). These pages crush it for SEO and local searches</p>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-check">4</div>
+                    <div class="checklist-content">
+                        <h4>About Us</h4>
+                        <p>Share your story, show your face, mention your experience. People hire people, not faceless companies</p>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-check">5</div>
+                    <div class="checklist-content">
+                        <h4>Contact Page</h4>
+                        <p>Form + phone + email + service area map. Make contact options dead obvious</p>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-check">6</div>
+                    <div class="checklist-content">
+                        <h4>FAQ Page</h4>
+                        <p>Answer objections before people ask them. "How much delivery cost?", "Do you offer insurance?", "What if it rains?" Good for SEO too</p>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-check">7</div>
+                    <div class="checklist-content">
+                        <h4>Reviews/Testimonials Page</h4>
+                        <p>Dedicated page showcasing your best reviews, testimonials, and success stories. This builds credibility at scale</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 40px;">
+                <h3>Pages NOT Worth Your Time</h3>
+                <ul class="card-list">
+                    <li><strong>Blog page (unless you update it regularly)</strong> – An old, outdated blog hurts credibility. Don't have one if you can't maintain it</li>
+                    <li><strong>News/Press page (unless you actually have news)</strong> – Empty pages scream "we don't update this"</li>
+                    <li><strong>Portfolio with 100+ photos</strong> – Pick your 15 best. More isn't better; it's slower and confuses people</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="section">
+        <div class="container">
+            <div class="cta-section">
+                <h2>Ready to Build a Website That Actually Converts?</h2>
+                <p>At KO Marketing, we specialize in turning bounce house business websites into 24/7 sales machines. We handle the design, SEO, copywriting, and conversion optimization—so you can focus on throwing amazing parties.</p>
+                <p style="font-size: 16px; opacity: 0.9; margin-bottom: 30px;">From above-the-fold optimization to trust signals that move customers, we make every pixel count.</p>
+                <a href="hire-us.html" class="cta-button">Let's Build Your Website</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 KO Marketing | Serving Bounce House Business Owners</p>
+        <p>Let's grow your party rental empire together</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .trust-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Highlight active nav link
+        const currentLocation = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            if (link.getAttribute('href') === currentLocation) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

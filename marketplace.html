@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace & Word of Mouth - Bounce House Marketing Roadmap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #020817;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #020817;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #4461F2;
+        }
+
+        nav a.active {
+            background-color: #4461F2;
+            font-weight: 600;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #4461F2 0%, #020817 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-left: 4px solid #4461F2;
+            border-radius: 8px;
+            animation: fadeInUp 0.8s ease;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+        section:nth-child(5) { animation-delay: 0.5s; }
+
+        h2 {
+            color: #4461F2;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            color: #020817;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        ul {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
+        .highlight {
+            background-color: #4461F2;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .pro, .con {
+            padding: 1.5rem;
+            border-radius: 6px;
+        }
+
+        .pro {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+        }
+
+        .con {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+        }
+
+        .pro h4, .con h4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .pro h4 {
+            color: #2e7d32;
+        }
+
+        .con h4 {
+            color: #c62828;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #4461F2 0%, #020817 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 3rem 0;
+            animation: fadeInUp 0.8s ease 0.6s backwards;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #4461F2;
+            padding: 0.85rem 2.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #020817;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                gap: 0.25rem;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+
+            p, li {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+                display: block;
+            }
+
+            .cta-button {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gbp.html">Google Business</a></li>
+                <li><a href="website.html">Website</a></li>
+                <li><a href="seo.html">SEO</a></li>
+                <li><a href="google-ads.html">Google Ads</a></li>
+                <li><a href="social-media.html">Social Media</a></li>
+                <li><a href="marketplace.html" style="color:#4461F2">Marketplace</a></li>
+                <li><a href="automation.html">Automation</a></li>
+                <li><a href="niche.html">Niche</a></li>
+                <li><a href="ai.html">AI</a></li>
+                <li><a href="hire-us.html">Hire Us</a></li>
+            </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Marketplace & Word of Mouth</h1>
+        <p>Build sustainable growth through community and referrals</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Facebook Marketplace Section -->
+        <section>
+            <h2>Facebook Marketplace</h2>
+            <p>Yes, Jamie doesn't love this option—but it works. Let's be honest: Facebook Marketplace gets eyeballs, and eyeballs turn into bookings when you're starting out.</p>
+
+            <h3>How It Works:</h3>
+            <ul>
+                <li><strong>It's free</strong> - Zero cost to reach thousands of potential customers in your area</li>
+                <li><strong>Post each piece of equipment</strong> as a listing with clear rental pricing and availability</li>
+                <li><strong>Use keywords in your titles:</strong> "Bounce House Rental - [City] - Birthday Parties & Events" (people search for exactly this)</li>
+                <li><strong>Repost/renew listings weekly</strong> - Marketplace prioritizes recent posts; staying visible matters</li>
+                <li><strong>Respond FAST to messages</strong> - Speed wins on Marketplace. Reply within 15 minutes when possible</li>
+            </ul>
+
+            <h3>The Real Talk:</h3>
+            <div class="pros-cons">
+                <div class="pro">
+                    <h4>✓ The Upside:</h4>
+                    <p>Builds awareness fast, especially in new markets. Low barrier to entry. Good for seasonal spikes.</p>
+                </div>
+                <div class="con">
+                    <h4>✗ The Downside:</h4>
+                    <p>Tire kickers, lowballers, and time-consuming conversations that don't convert. Less qualified leads than other channels.</p>
+                </div>
+            </div>
+
+            <p><strong>Best for:</strong> New businesses building awareness, slow seasons, quick wins on the side.</p>
+        </section>
+
+        <!-- Facebook Groups Section -->
+        <section>
+            <h2>Facebook Groups</h2>
+            <p>This is the hidden goldmine. While everyone's chasing ads, smart business owners are quietly dominating their communities through groups.</p>
+
+            <h3>The Strategy:</h3>
+            <ul>
+                <li><strong>Join every local group:</strong> Mom groups, community groups, event planning groups, parent co-ops—join them all</li>
+                <li><strong>Don't spam.</strong> Provide value first. Answer questions about party planning, event logistics, budget tips</li>
+                <li><strong>Become a known name:</strong> When someone asks "Where can I rent a bounce house?", you're already there, already trusted, already recommended</li>
+                <li><strong>Post helpful content:</strong> Share party planning tips, seasonal event ideas, safety reminders—not just ads</li>
+                <li><strong>Create your own group:</strong> "[City] Party Planning & Events" - You become the hub. People come back. You own the community</li>
+            </ul>
+
+            <div class="highlight">
+                <h3>Why Groups Win Over Ads:</h3>
+                <p>People in groups are looking for recommendations from real people, not scrolling past ads. When you're already part of the conversation, your recommendation carries weight. This is earned trust, not purchased attention.</p>
+            </div>
+        </section>
+
+        <!-- Word of Mouth Systems Section -->
+        <section>
+            <h2>Word of Mouth Systems</h2>
+            <p>Great service happens by accident. Referrals happen on purpose. Don't leave them to chance—build a system.</p>
+
+            <h3>The Referral Card Strategy:</h3>
+            <ul>
+                <li>Leave referral cards at every event: <strong>"Refer a friend, get $25 off your next rental"</strong></li>
+                <li>Simple card design with your phone number and discount code</li>
+                <li>Make the offer compelling enough to pass along (friends value $25)</li>
+            </ul>
+
+            <h3>The Pickup Question:</h3>
+            <p>At every pickup, ask: <strong>"Did everyone have fun? We'd love it if you told your friends about us!"</strong> This plants the seed. Make it easy for them to do it by handing them referral cards.</p>
+
+            <h3>Venue & Planner Partnerships:</h3>
+            <ul>
+                <li><strong>Event venues:</strong> Build relationships with local event spaces. They host parties constantly—be their go-to equipment partner</li>
+                <li><strong>Churches & schools:</strong> Sponsor school events, offer bulk discounts for fundraisers</li>
+                <li><strong>Parks departments:</strong> Partner for community events. Visibility + credibility</li>
+                <li><strong>Wedding/event planners:</strong> They book recurring events and can send you steady business. Offer them commission or referral discounts</li>
+            </ul>
+
+            <div class="highlight">
+                <h3>Why This Works:</h3>
+                <p>Venues and planners have constant demand for your services. One partnership can mean multiple bookings per month. Focus on building real relationships, not just getting a contract.</p>
+            </div>
+        </section>
+
+        <!-- Community Presence Section -->
+        <section>
+            <h2>Community Presence</h2>
+            <p>You're not just a service provider—you're part of the community. When families see your brand everywhere, they trust you.</p>
+
+            <h3>Build Visibility:</h3>
+            <ul>
+                <li><strong>Sponsor a little league team:</strong> Your banner at every game. Dozens of families see it every weekend</li>
+                <li><strong>Set up at community festivals:</strong> Even if it's at cost or free, the visibility is worth it. Let kids jump. Parents see your professionalism</li>
+                <li><strong>School fundraiser partnerships:</strong> Offer a portion of rentals during school fundraisers. Parents love supporting their schools</li>
+                <li><strong>Chamber of Commerce membership:</strong> Be a known local business. Get referrals from the network</li>
+                <li><strong>Leave business cards at every delivery:</strong> Every location you visit is a mini-billboard. Leave 5-10 cards behind</li>
+            </ul>
+
+            <p><strong>The goal:</strong> When families in your area think "bounce house," your name comes to mind because they've seen you everywhere.</p>
+        </section>
+
+        <!-- Review Generation Machine Section -->
+        <section>
+            <h2>Review Generation Machine</h2>
+            <p>Reviews are the new word of mouth. Build a system to generate them automatically after every event.</p>
+
+            <h3>The Process:</h3>
+            <ul>
+                <li><strong>Follow up after EVERY event</strong> - Don't miss a single one</li>
+                <li><strong>Text beats email</strong> - Text response rates are 3-5x higher than email</li>
+                <li><strong>Make it easy:</strong> Send a direct link to your Google Business Profile review page (no searching required)</li>
+                <li><strong>Incentivize:</strong> "Leave us a review and get 10% off your next booking" - people respond to offers</li>
+                <li><strong>Respond to every single review</strong> - Thank them, mention keywords (your city, service type), show you care</li>
+            </ul>
+
+            <div class="highlight">
+                <h3>Sample Review Request Text:</h3>
+                <p>"Thanks for letting us be part of [Birthday Child]'s party! We'd love your feedback: [Google Review Link]. Mention this text for 10% off your next rental! 🎉"</p>
+            </div>
+
+            <p><strong>Why this matters:</strong> Google reviews are the #1 factor customers check before booking. 20 real reviews with 4.8 stars beats any ad campaign.</p>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Ready to Build a System?</h2>
+            <p>Marketplace and word-of-mouth strategies work best when they're part of your complete marketing roadmap. We'll help you implement systems that turn one-time customers into repeat clients.</p>
+            <a href="hire-us.html" class="cta-button">Let's Talk Strategy</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Bounce House Marketing Roadmap. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+
+        // Set active nav link
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('nav a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

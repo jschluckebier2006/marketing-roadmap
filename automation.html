@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation & Systems - Bounce House Marketing Roadmap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #020817;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #020817;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #4461F2;
+        }
+
+        nav a.active {
+            background-color: #4461F2;
+            font-weight: 600;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #4461F2 0%, #020817 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-left: 4px solid #4461F2;
+            border-radius: 8px;
+            animation: fadeInUp 0.8s ease;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+        section:nth-child(5) { animation-delay: 0.5s; }
+        section:nth-child(6) { animation-delay: 0.6s; }
+        section:nth-child(7) { animation-delay: 0.7s; }
+
+        h2 {
+            color: #4461F2;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            color: #020817;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        ul {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
+        .highlight {
+            background-color: #4461F2;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .highlight ul {
+            color: white;
+        }
+
+        .highlight li {
+            color: white;
+        }
+
+        .workflow-box {
+            background-color: white;
+            border: 2px solid #4461F2;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .workflow-box h4 {
+            color: #4461F2;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1rem;
+            background-color: white;
+            border-left: 4px solid #4461F2;
+            border-radius: 4px;
+        }
+
+        .timeline-item strong {
+            color: #4461F2;
+            white-space: nowrap;
+            min-width: 100px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tool-card {
+            background-color: white;
+            border: 2px solid #e0e0e0;
+            padding: 1.5rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            border-color: #4461F2;
+            box-shadow: 0 4px 12px rgba(68, 97, 242, 0.15);
+        }
+
+        .tool-card h4 {
+            color: #4461F2;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .tool-card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #4461F2 0%, #020817 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 3rem 0;
+            animation: fadeInUp 0.8s ease 0.8s backwards;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #4461F2;
+            padding: 0.85rem 2.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #020817;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                gap: 0.25rem;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            p, li {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+                display: block;
+            }
+
+            .cta-button {
+                display: block;
+                margin: 0 auto;
+            }
+
+            .timeline-item {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gbp.html">Google Business</a></li>
+                <li><a href="website.html">Website</a></li>
+                <li><a href="seo.html">SEO</a></li>
+                <li><a href="google-ads.html">Google Ads</a></li>
+                <li><a href="social-media.html">Social Media</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="automation.html" style="color:#4461F2">Automation</a></li>
+                <li><a href="niche.html">Niche</a></li>
+                <li><a href="ai.html">AI</a></li>
+                <li><a href="hire-us.html">Hire Us</a></li>
+            </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Automation & Systems</h1>
+        <p>Scale your business without scaling your hours</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Introduction Section -->
+        <section>
+            <h2>Why Automation Separates Part-Timers from Real Businesses</h2>
+            <p>You can't scale if you're doing everything manually. Here's the truth: automation handles the repetitive stuff so you can focus on delivering great experiences and growing your business.</p>
+
+            <div class="highlight">
+                <h3>The Automation Goal</h3>
+                <p>Bookings come in → Confirmations go out → Follow-ups happen → Reviews get requested → Customers get re-engaged<br><strong>All without you lifting a finger.</strong></p>
+            </div>
+
+            <p>The businesses that dominate their markets aren't necessarily smarter. They're automated. They've built systems that work while they sleep. Let's build that for you.</p>
+        </section>
+
+        <!-- Automated Booking Confirmations Section -->
+        <section>
+            <h2>Automated Booking Confirmations</h2>
+            <p>When someone books through your website or app, they should get immediate confirmation. Not tomorrow. Not when you check your email. Right now.</p>
+
+            <h3>What They Should Receive Immediately:</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Email/Text:</strong>
+                    <div>Booking confirmation with order number and date</div>
+                </div>
+                <div class="timeline-item">
+                    <strong>Details:</strong>
+                    <div>What to expect, delivery window, setup instructions</div>
+                </div>
+                <div class="timeline-item">
+                    <strong>Policy:</strong>
+                    <div>Weather policy, cancellation terms, safety guidelines</div>
+                </div>
+                <div class="timeline-item">
+                    <strong>Next Steps:</strong>
+                    <div>What happens next, when you'll contact them, how to reach you</div>
+                </div>
+            </div>
+
+            <h3>The Tools That Handle This:</h3>
+            <p><strong>Event Rental Systems (ERS), BookingBug, Setmore, and similar platforms</strong> automatically send confirmation messages when bookings come in. Some integrate with your website, others work standalone.</p>
+
+            <div class="highlight">
+                <h3>The Hard Truth:</h3>
+                <p>If you're still manually confirming bookings via text or email, you're losing bookings to faster competitors. Customers expect instant confirmation. Provide it, or they'll book someone else.</p>
+            </div>
+        </section>
+
+        <!-- Automated Follow-Up Sequences Section -->
+        <section>
+            <h2>Automated Follow-Up Sequences</h2>
+            <p>After someone books, they shouldn't hear from you just once. A well-timed follow-up sequence keeps you top of mind and reduces no-shows.</p>
+
+            <h3>The Perfect Follow-Up Timeline:</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Day Before Event:</strong>
+                    <div>Reminder text/email with delivery time, what to prepare, contact number for day-of questions</div>
+                </div>
+                <div class="timeline-item">
+                    <strong>Day Of Event:</strong>
+                    <div>"We're on our way!" notification with driver name/photo, ETA, parking instructions</div>
+                </div>
+                <div class="timeline-item">
+                    <strong>Day After Event:</strong>
+                    <div>"How was your event?" text with review request link. Peak time to capture feedback</div>
+                </div>
+                <div class="timeline-item">
+                    <strong>1 Week After:</strong>
+                    <div>"Thanks again! Share us with friends" + referral offer (Refer a friend, get $25 off)</div>
+                </div>
+                <div class="timeline-item">
+                    <strong>1 Month After:</strong>
+                    <div>"Planning another event? Book early and save!" seasonal promotions for holidays</div>
+                </div>
+            </div>
+
+            <p><strong>Each message has a clear purpose:</strong> reduce anxiety, increase satisfaction, generate reviews, drive referrals, encourage repeat business.</p>
+        </section>
+
+        <!-- Automated Review Requests Section -->
+        <section>
+            <h2>Automated Review Requests</h2>
+            <p>Reviews are your most powerful marketing asset. The more reviews you have, the higher you rank in Google. The higher your rating, the more people trust you enough to book.</p>
+
+            <h3>The Review Request System:</h3>
+            <ul>
+                <li><strong>24 hours after every event:</strong> Automatic review request text/email</li>
+                <li><strong>Direct link:</strong> Make it one click to leave a review (no searching required)</li>
+                <li><strong>Follow-up:</strong> One reminder if they don't respond (but don't be pushy)</li>
+                <li><strong>Respond to every review:</strong> Even negative ones. Thank them, address concerns, mention keywords</li>
+            </ul>
+
+            <h3>Tools That Automate This:</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h4>Podium</h4>
+                    <p>Texting platform with built-in review request automation. Tracks which customers have left reviews.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>Birdeye</h4>
+                    <p>Reputation management platform. Sends review requests, monitors reviews across platforms, responds automatically.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>Booking Software</h4>
+                    <p>Most modern booking systems (Acuity Scheduling, Setmore) have review request automation built in.</p>
+                </div>
+            </div>
+
+            <div class="workflow-box">
+                <h4>Your Review Request Flow:</h4>
+                <p>Event Ends → 24hrs Later → Automatic Text Sent → Customer Clicks Link → Review Posted → You Respond with Keywords → Rank Higher → More Bookings</p>
+            </div>
+
+            <p><strong>Why this matters:</strong> 20 real reviews with 4.8 stars beats any paid ad campaign. People trust other customers more than your marketing.</p>
+        </section>
+
+        <!-- Email Marketing Automation Section -->
+        <section>
+            <h2>Email Marketing Automation</h2>
+            <p>Email is one of the highest ROI marketing channels. You already collect emails from inquiries and bookings—use them.</p>
+
+            <h3>The Automated Email Campaigns:</h3>
+            <ul>
+                <li><strong>Spring/Summer Booking Reminders:</strong> "Summer's coming! Book your bounce house early for the best dates"</li>
+                <li><strong>Holiday Specials:</strong> 4th of July party season, Halloween events, holiday gatherings</li>
+                <li><strong>Back-to-School Field Days:</strong> Schools need entertainment. Email every customer who has school-age kids</li>
+                <li><strong>Birthday Reminders:</strong> If you collect birthdays, "Your child's birthday is coming up! Book early for the best selection"</li>
+                <li><strong>Winback Campaigns:</strong> Customers who booked 1+ years ago. "We miss you! Here's 15% off to plan your next party"</li>
+            </ul>
+
+            <h3>Email Tools (Free to Start):</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h4>Mailchimp</h4>
+                    <p>Free tier: 500 contacts, unlimited emails. Pre-built templates, automation workflows, segmentation.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>Constant Contact</h4>
+                    <p>Free trial. Email automation, customer segmentation, conversion tracking. Built for small businesses.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>Brevo (Sendinblue)</h4>
+                    <p>Free: 300 emails/day, unlimited contacts. Advanced segmentation, SMS automation, CRM integration.</p>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <h3>The Email Automation Formula</h3>
+                <p><strong>Collect every email → Segment by interest/history → Send seasonal campaigns → Track clicks → Follow up with unclickers</strong><br><br>A single email campaign can generate 10-15% of your monthly revenue if done right.</p>
+            </div>
+        </section>
+
+        <!-- Remarketing & Retargeting Section -->
+        <section>
+            <h2>Remarketing & Retargeting</h2>
+            <p>Someone visits your website but doesn't book. That's not a lost customer—that's a missed opportunity. Remarketing brings them back.</p>
+
+            <h3>How It Works:</h3>
+            <ul>
+                <li><strong>Website visitor → Sees your ads on Facebook/Instagram for 30 days</strong> - They already showed interest</li>
+                <li><strong>Google Ads Remarketing:</strong> Follow visitors around the web with your ads on Google search, YouTube, partner sites</li>
+                <li><strong>Repeat exposure = Higher conversion:</strong> Most customers need 5-7 exposures before buying. Use ads to provide those touches</li>
+            </ul>
+
+            <h3>What You Need to Set Up:</h3>
+            <div class="workflow-box">
+                <h4>Step 1: Facebook Pixel</h4>
+                <p>A tracking code on your website that records every visitor. Takes 10 minutes to install.</p>
+            </div>
+
+            <div class="workflow-box">
+                <h4>Step 2: Google Ads Remarketing Tag</h4>
+                <p>Similar to Facebook Pixel. Tracks website visitors for Google Ads retargeting campaigns.</p>
+            </div>
+
+            <div class="workflow-box">
+                <h4>Step 3: Create Remarketing Audiences</h4>
+                <p>Segment visitors: "People who viewed bounce house rentals", "People who added to cart but didn't book", etc.</p>
+            </div>
+
+            <div class="workflow-box">
+                <h4>Step 4: Launch Retargeting Ads</h4>
+                <p>Show specific ads to each audience. "You were looking at bounce houses. Here's 10% off if you book this week."</p>
+            </div>
+
+            <div class="highlight">
+                <h3>Why This Works:</h3>
+                <p>Remarketing is extremely cost-effective because you're targeting people who already showed interest. Your cost per conversion is often 70% lower than cold traffic.</p>
+            </div>
+        </section>
+
+        <!-- CRM & Pipeline Management Section -->
+        <section>
+            <h2>CRM & Pipeline Management</h2>
+            <p>A CRM (Customer Relationship Management) system is where every lead, booking, and customer lives. It's your business nervous system.</p>
+
+            <h3>What You Should Track:</h3>
+            <ul>
+                <li><strong>Every lead from inquiry to booking:</strong> Know where they came from, when you followed up, what they booked</li>
+                <li><strong>Repeat customers:</strong> Who are your most loyal? What do they book? When do they book?</li>
+                <li><strong>Referral sources:</strong> Which customers referred you? How much revenue did they generate?</li>
+                <li><strong>Follow-up tasks:</strong> Who needs a follow-up? When? What for?</li>
+                <li><strong>Revenue by source:</strong> Which marketing channel (Google Ads, Facebook Marketplace, referrals) makes you the most money?</li>
+            </ul>
+
+            <h3>CRM Options by Stage:</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h4>Start: Google Sheets</h4>
+                    <p>Free. Simple tracking. Columns: Lead Name, Email, Phone, Inquiry Date, Booking Date, Amount, Referral Source. Gets you 80% of the way.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>Growing: HubSpot Free</h4>
+                    <p>Free CRM with contact management, deal tracking, email integration. Scales with you as you grow.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>Scaling: Pipedrive</h4>
+                    <p>$11/month. Built for sales teams. Visual pipeline, automation, reporting. Great for 5+ bookings/week.</p>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <h3>The CRM Rule</h3>
+                <p><strong>Don't let leads fall through the cracks.</strong> If you're managing leads in your phone notes or email, you're leaving money on the table. A system ensures nothing gets missed.</p>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Ready to Automate?</h2>
+            <p>Automation separates the businesses that scale from the ones stuck doing everything manually. We'll help you build systems that work 24/7, even when you're not.</p>
+            <a href="hire-us.html" class="cta-button">Let's Build Your System</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Bounce House Marketing Roadmap. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+
+        // Set active nav link
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('nav a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
