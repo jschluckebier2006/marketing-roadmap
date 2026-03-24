@@ -113,24 +113,16 @@
         /* Hero Section */
         .hero {
             margin-top: 70px;
-            padding: 5rem 2rem 3rem;
+            padding: 4rem 2rem 2rem;
             text-align: center;
             background: linear-gradient(135deg, rgba(68, 97, 242, 0.05) 0%, rgba(68, 97, 242, 0.02) 100%);
             animation: fadeInDown 0.8s ease-out;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #4461F2;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
         .hero .subtitle {
             font-size: 1.5rem;
             color: #020817;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             font-weight: 600;
         }
 
@@ -141,14 +133,25 @@
             font-weight: 500;
         }
 
+        .hero-image {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(68, 97, 242, 0.15);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        }
+
         @media (max-width: 768px) {
             .hero {
                 padding: 3rem 1.5rem 2rem;
                 margin-top: 60px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
             }
 
             .hero .subtitle {
@@ -167,14 +170,119 @@
             padding: 0 2rem;
         }
 
+        /* Funnel Explanation Section */
+        .funnel-section {
+            padding: 3rem 2rem 1rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .funnel-intro {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+
+        .funnel-intro h2 {
+            font-size: 2.2rem;
+            color: #020817;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .funnel-intro .lead {
+            font-size: 1.15rem;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .funnel-callout {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+            border-left: 4px solid #f97316;
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .funnel-callout h3 {
+            color: #c2410c;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .funnel-callout p {
+            color: #431407;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .streams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem auto;
+            max-width: 1000px;
+        }
+
+        .stream-card {
+            background: white;
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+            padding: 1.25rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stream-card:hover {
+            border-color: #4461F2;
+            box-shadow: 0 5px 20px rgba(68, 97, 242, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .stream-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stream-card h4 {
+            font-size: 0.95rem;
+            color: #020817;
+            margin-bottom: 0.4rem;
+        }
+
+        .stream-card p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .funnel-bottom-text {
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        .funnel-bottom-text p {
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .funnel-bottom-text strong {
+            color: #4461F2;
+        }
+
         /* Roadmap Section */
         .roadmap-section {
-            padding: 4rem 2rem;
+            padding: 3rem 2rem 4rem;
         }
 
         .roadmap-intro {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .roadmap-intro h2 {
@@ -399,6 +507,7 @@
                 opacity: 0;
                 transform: translateY(-30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -410,6 +519,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -430,11 +540,12 @@
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="#" class="nav-logo">KO Marketing</a>
-            <button class="nav-toggle" id="navToggle">☰</button>
+            <button class="nav-toggle" id="navToggle">&#9776;</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" style="color:#4461F2">Home</a></li>
                 <li><a href="gbp.html">Google Business</a></li>
@@ -454,9 +565,86 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>"This information is so good you're not going to want your competitor to know this stuff!"</h1>
-            <p class="subtitle">The Complete Marketing Roadmap for Bounce House & Party Rental Business Owners</p>
+            <p class="subtitle">The Complete Marketing Roadmap for Bounce House &amp; Party Rental Business Owners</p>
             <p class="presenter">Presented by Jamie Schluckebier | KO Marketing Agency | Wave Con 2026</p>
+            <div class="hero-image">
+                <img src="Gemini_Generated_Image_okwa3rokwa3rokwa.png" alt="The Funnel to Rental Customers - Marketing channels flowing into consideration, evaluation, and conversion stages for bounce house rental businesses">
+            </div>
+        </div>
+    </section>
+
+    <!-- Funnel Explanation Section -->
+    <section class="funnel-section">
+        <div class="container">
+            <div class="funnel-intro">
+                <h2>Stop Relying on a Single Marketing Channel</h2>
+                <p class="lead">
+                    Most bounce house operators make the same mistake: they pick one or two marketing channels and call it a day. Maybe you post on Facebook Marketplace and wait for the phone to ring. Or you set up a Google Business Profile and hope for the best. But here's the truth &mdash; <strong>the most successful rental businesses don't depend on a single channel. They build a funnel.</strong>
+                </p>
+            </div>
+
+            <div class="funnel-callout">
+                <h3>What is a marketing channel?</h3>
+                <p>Each "stream" flowing into the funnel above represents a marketing channel &mdash; a distinct path that potential customers take to discover your business. Google Ads, SEO, Facebook Marketplace, Instagram, word of mouth, community flyers, vehicle wraps &mdash; these are all separate channels. The more channels you activate, the wider the top of your funnel gets, and the more rental bookings flow out the bottom.</p>
+            </div>
+
+            <div class="funnel-bottom-text">
+                <p>
+                    Think about it: if Facebook Marketplace is your only channel and the algorithm changes tomorrow, or your account gets restricted, your entire lead flow dries up overnight. We've seen it happen to operators over and over.
+                </p>
+                <p>
+                    The businesses that are consistently booked solid &mdash; the ones pulling in $200K, $500K, even $1M+ &mdash; have <strong>multiple channels feeding their funnel at all times</strong>. When one slows down, the others pick up the slack. That's how you build a business that doesn't keep you up at night.
+                </p>
+            </div>
+
+            <div class="streams-grid">
+                <div class="stream-card">
+                    <div class="stream-icon">&#x1F50D;</div>
+                    <h4>SEO &amp; Google Search</h4>
+                    <p>Customers actively searching for rentals in your city find you organically</p>
+                </div>
+                <div class="stream-card">
+                    <div class="stream-icon">&#x1F4CA;</div>
+                    <h4>Google Ads</h4>
+                    <p>Pay to appear at the very top when someone searches your keywords</p>
+                </div>
+                <div class="stream-card">
+                    <div class="stream-icon">&#x1F5FA;&#xFE0F;</div>
+                    <h4>Google Business Profile</h4>
+                    <p>Show up in the local map pack with reviews, photos, and your phone number</p>
+                </div>
+                <div class="stream-card">
+                    <div class="stream-icon">&#x1F4F1;</div>
+                    <h4>Social Media</h4>
+                    <p>Build awareness and trust through Instagram reels, Facebook posts, and TikTok</p>
+                </div>
+                <div class="stream-card">
+                    <div class="stream-icon">&#x1F6CD;&#xFE0F;</div>
+                    <h4>Facebook Marketplace</h4>
+                    <p>A powerful channel &mdash; but dangerous if it's your only one</p>
+                </div>
+                <div class="stream-card">
+                    <div class="stream-icon">&#x2B50;</div>
+                    <h4>Reviews &amp; Word of Mouth</h4>
+                    <p>Happy customers telling friends is free marketing that compounds over time</p>
+                </div>
+                <div class="stream-card">
+                    <div class="stream-icon">&#x1F4E7;</div>
+                    <h4>Email &amp; SMS</h4>
+                    <p>Re-engage past customers with seasonal promos and reminders</p>
+                </div>
+                <div class="stream-card">
+                    <div class="stream-icon">&#x1F91D;</div>
+                    <h4>B2B &amp; Partnerships</h4>
+                    <p>Event planners, churches, schools, and daycares who book repeatedly</p>
+                </div>
+            </div>
+
+            <div class="funnel-bottom-text">
+                <p>
+                    This roadmap walks you through each channel step by step. By the end, you'll have a clear plan to turn on multiple streams so your funnel is always full &mdash; and your weekends are always booked.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -464,8 +652,8 @@
     <section class="roadmap-section">
         <div class="container">
             <div class="roadmap-intro">
-                <h2>Your Path to Success</h2>
-                <p>Follow this 10-step roadmap to transform your bounce house business into a marketing powerhouse.</p>
+                <h2>Your 10-Step Roadmap</h2>
+                <p>Each step activates a new channel in your funnel. Click any card to dive deep into that channel's strategy.</p>
             </div>
 
             <!-- Roadmap Grid -->
@@ -473,91 +661,91 @@
                 <!-- Card 1: Google Business Profile -->
                 <a href="gbp.html" class="roadmap-card">
                     <div class="card-number">01</div>
-                    <div class="card-icon">🗺️</div>
+                    <div class="card-icon">&#x1F5FA;&#xFE0F;</div>
                     <h3 class="card-title">Google Business Profile Optimization</h3>
                     <p class="card-description">Master the foundation of local search. Optimize your profile to dominate local map results and attract more customers searching nearby.</p>
-                    <span class="card-link">Learn More →</span>
+                    <span class="card-link">Learn More &rarr;</span>
                 </a>
 
                 <!-- Card 2: Website & Conversions -->
                 <a href="website.html" class="roadmap-card">
                     <div class="card-number">02</div>
-                    <div class="card-icon">💻</div>
-                    <h3 class="card-title">Your Website & Conversions</h3>
+                    <div class="card-icon">&#x1F4BB;</div>
+                    <h3 class="card-title">Your Website &amp; Conversions</h3>
                     <p class="card-description">Build a conversion-focused website that turns visitors into customers. Learn the psychology and tactics that actually work.</p>
-                    <span class="card-link">Learn More →</span>
+                    <span class="card-link">Learn More &rarr;</span>
                 </a>
 
                 <!-- Card 3: SEO Deep Dive -->
                 <a href="seo.html" class="roadmap-card">
                     <div class="card-number">03</div>
-                    <div class="card-icon">🔍</div>
+                    <div class="card-icon">&#x1F50D;</div>
                     <h3 class="card-title">SEO Deep Dive</h3>
                     <p class="card-description">Rank higher in search results organically. Implement proven SEO strategies to get consistent, long-term traffic from Google.</p>
-                    <span class="card-link">Learn More →</span>
+                    <span class="card-link">Learn More &rarr;</span>
                 </a>
 
                 <!-- Card 4: Google Ads Mastery -->
                 <a href="google-ads.html" class="roadmap-card">
                     <div class="card-number">04</div>
-                    <div class="card-icon">📊</div>
+                    <div class="card-icon">&#x1F4CA;</div>
                     <h3 class="card-title">Google Ads Mastery</h3>
                     <p class="card-description">Run profitable paid search campaigns. Master Google Ads to reach customers actively searching for your services.</p>
-                    <span class="card-link">Learn More →</span>
+                    <span class="card-link">Learn More &rarr;</span>
                 </a>
 
                 <!-- Card 5: Social Media & Content -->
                 <a href="social-media.html" class="roadmap-card">
                     <div class="card-number">05</div>
-                    <div class="card-icon">📱</div>
-                    <h3 class="card-title">Social Media & Content</h3>
+                    <div class="card-icon">&#x1F4F1;</div>
+                    <h3 class="card-title">Social Media &amp; Content</h3>
                     <p class="card-description">Build an engaged community. Create content that resonates with parents and event planners on Instagram, Facebook, and TikTok.</p>
-                    <span class="card-link">Learn More →</span>
+                    <span class="card-link">Learn More &rarr;</span>
                 </a>
 
                 <!-- Card 6: Marketplace & Word of Mouth -->
                 <a href="marketplace.html" class="roadmap-card">
                     <div class="card-number">06</div>
-                    <div class="card-icon">⭐</div>
-                    <h3 class="card-title">Marketplace & Word of Mouth</h3>
+                    <div class="card-icon">&#x2B50;</div>
+                    <h3 class="card-title">Marketplace &amp; Word of Mouth</h3>
                     <p class="card-description">Leverage platforms and reputation. Optimize your presence on Yelp, Airbnb Experiences, and event marketplaces.</p>
-                    <span class="card-link">Learn More →</span>
+                    <span class="card-link">Learn More &rarr;</span>
                 </a>
 
                 <!-- Card 7: Automation & Systems -->
                 <a href="automation.html" class="roadmap-card">
                     <div class="card-number">07</div>
-                    <div class="card-icon">⚙️</div>
-                    <h3 class="card-title">Automation & Systems</h3>
+                    <div class="card-icon">&#x2699;&#xFE0F;</div>
+                    <h3 class="card-title">Automation &amp; Systems</h3>
                     <p class="card-description">Work smarter, not harder. Implement automation to handle bookings, follow-ups, and customer communication at scale.</p>
-                    <span class="card-link">Learn More →</span>
+                    <span class="card-link">Learn More &rarr;</span>
                 </a>
 
                 <!-- Card 8: Niche Expansion -->
                 <a href="niche.html" class="roadmap-card">
                     <div class="card-number">08</div>
-                    <div class="card-icon">🎯</div>
+                    <div class="card-icon">&#x1F3AF;</div>
                     <h3 class="card-title">Niche Expansion</h3>
                     <p class="card-description">Expand strategically. Discover new market segments and revenue streams beyond bounce houses.</p>
-                    <span class="card-link">Learn More →</span>
+                    <span class="card-link">Learn More &rarr;</span>
                 </a>
 
                 <!-- Card 9: AI - Your Secret Weapon -->
                 <a href="ai.html" class="roadmap-card">
                     <div class="card-number">09</div>
-                    <div class="card-icon">🤖</div>
+                    <div class="card-icon">&#x1F916;</div>
                     <h3 class="card-title">AI - Your Secret Weapon</h3>
                     <p class="card-description">Stay ahead of the curve. Use AI tools to create content, improve customer service, and gain competitive advantage.</p>
-                    <span class="card-link">Learn More →</span>
+                    <span class="card-link">Learn More &rarr;</span>
                 </a>
 
                 <!-- Card 10: Ready to Grow? -->
                 <a href="hire-us.html" class="roadmap-card">
                     <div class="card-number">10</div>
-                    <div class="card-icon">🚀</div>
+                    <div class="card-icon">&#x1F680;</div>
                     <h3 class="card-title">Ready to Grow?</h3>
                     <p class="card-description">Take action now. Let's discuss how we can help you implement this roadmap and scale your business to new heights.</p>
-                    <span class="card-link">Let's Talk →</span>
+                    <span class="card-link">Let's Talk &rarr;</span>
                 </a>
             </div>
 
@@ -566,13 +754,7 @@
                 <h3>Get the Bonus Toolkit</h3>
                 <p>Join our community of smart bounce house business owners. Get exclusive templates, checklists, and resources to implement this roadmap faster.</p>
                 <form class="email-form" onsubmit="handleEmailSubmit(event)">
-                    <input
-                        type="email"
-                        class="email-input"
-                        placeholder="Enter your email address"
-                        required
-                        id="emailInput"
-                    >
+                    <input type="email" class="email-input" placeholder="Enter your email address" required id="emailInput">
                     <button type="submit" class="email-submit">Get Toolkit</button>
                 </form>
             </div>
@@ -587,11 +769,10 @@
                 Presented by <strong>Jamie Schluckebier</strong>
             </p>
             <p class="footer-text">
-                Learn more about our services:
-                <a href="https://kosocialsoftware.com" target="_blank" class="footer-link">KO Social Software</a>
+                Learn more about our services: <a href="https://kosocialsoftware.com" target="_blank" class="footer-link">KO Social Software</a>
             </p>
             <div class="footer-copyright">
-                © 2026 KO Marketing Agency. All rights reserved.
+                &copy; 2026 KO Marketing Agency. All rights reserved.
             </div>
         </div>
     </footer>
@@ -616,17 +797,13 @@
         function handleEmailSubmit(event) {
             event.preventDefault();
             const email = document.getElementById('emailInput').value;
-
-            // Log for debugging - they'll connect the form later
             console.log('Email submitted:', email);
 
-            // Show success feedback
             const button = event.target.querySelector('.email-submit');
             const originalText = button.textContent;
-            button.textContent = '✓ Thanks!';
+            button.textContent = '\u2713 Thanks!';
             button.style.opacity = '0.8';
 
-            // Reset after 2 seconds
             setTimeout(() => {
                 button.textContent = originalText;
                 button.style.opacity = '1';
@@ -642,14 +819,12 @@
                     e.preventDefault();
                     const element = document.querySelector(href);
                     if (element) {
-                        element.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 }
             });
         });
     </script>
+
 </body>
 </html>
